@@ -1,0 +1,444 @@
+/*
+=========================================================
+  ملف التنسيقات الرئيسي (CSS) - أ. محمد وحيد
+  أخصائي التربية الخاصة والتخاطب وتعديل السلوك
+=========================================================
+*/
+
+/* ── 1. المتغيرات العامة (CSS Custom Properties) ── */
+:root {
+    /* الألوان الفاتحة */
+    --bg-primary: #f8fafc;
+    --bg-secondary: #ffffff;
+    --text-primary: #1c2541;
+    --text-secondary: #475569;
+    --brand-navy: #0b132b;
+    --brand-blue: #3a86c8;
+    --brand-light-blue: #4ea8de;
+    --border-color: rgba(28, 37, 65, 0.08);
+
+    /* التأثيرات والظلال */
+    --shadow-soft: 0 8px 30px rgba(58, 134, 200, 0.08);
+    --shadow-hover: 0 15px 40px rgba(58, 134, 200, 0.15);
+    --glass-bg: rgba(255, 255, 255, 0.8);
+    --glass-border: rgba(255, 255, 255, 0.4);
+
+    /* الحركات (Animations & Transitions) */
+    --transition-fast: 0.2s ease;
+    --transition-smooth: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-slow: 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* متغيرات الوضع الداكن (Dark Mode) - كحلي فاخر */
+.dark {
+    --bg-primary: #071426;
+    --bg-secondary: #0b1d35;
+    --text-primary: #f8fafc;
+    --text-secondary: #94a3b8;
+    --brand-navy: #0b1d35;
+    --brand-blue: #4ea8de;
+    --brand-light-blue: #7dd3fc;
+    --border-color: rgba(255, 255, 255, 0.05);
+
+    --shadow-soft: 0 8px 30px rgba(78, 168, 222, 0.1);
+    --shadow-hover: 0 15px 40px rgba(78, 168, 222, 0.25);
+    --glass-bg: rgba(7, 20, 38, 0.75);
+    --glass-border: rgba(255, 255, 255, 0.1);
+}
+
+/* ── 2. الإعدادات الأساسية والتجاوب (Base & Reset) ── */
+html {
+    scroll-behavior: smooth;
+    direction: rtl;
+    /* دعم اللغة العربية والاتجاه من اليمين لليسار */
+}
+
+body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: 'Cairo', 'Outfit', sans-serif;
+    transition: background-color var(--transition-smooth), color var(--transition-smooth);
+    overflow-x: hidden;
+    line-height: 1.7;
+}
+
+/* ── 3. الهيدر والقائمة العلوية (Navbar) ── */
+#navbar {
+    background: var(--glass-bg);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--shadow-soft);
+    transition: all var(--transition-smooth);
+}
+
+.nav-link,
+.mobile-nav-link {
+    color: var(--text-primary);
+    transition: all var(--transition-fast);
+    position: relative;
+}
+
+.nav-link:hover,
+.mobile-nav-link:hover {
+    color: var(--brand-blue);
+    transform: translateY(-2px);
+}
+
+/* زر الوضع الليلي/النهاري (Light/Dark Mode Toggle) */
+#theme-toggle {
+    background-color: transparent;
+    border: 1px solid var(--border-color);
+    color: var(--brand-blue);
+    transition: all var(--transition-smooth);
+    cursor: pointer;
+}
+
+#theme-toggle:hover {
+    background-color: var(--brand-blue);
+    color: #ffffff;
+    box-shadow: 0 0 20px rgba(58, 134, 200, 0.4);
+    transform: rotate(15deg) scale(1.1);
+}
+
+/* ── 4. الصفحة الرئيسية (Hero Section) ── */
+#hero {
+    position: relative;
+    background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+    overflow: hidden;
+}
+
+#hero h1 {
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+/* تأثيرات التوهج الناعمة في الخلفية (Soft Cyan Glow) */
+.hero-glow-1,
+.hero-glow-2,
+.hero-glow-3 {
+    filter: blur(80px);
+    opacity: 0.5;
+    transition: all var(--transition-slow);
+}
+
+/* ── 5. النبذة التعريفية (About Section) ── */
+#about {
+    background-color: var(--bg-secondary);
+}
+
+/* ── 6. الخدمات (Services Section) ── */
+#services {
+    background-color: var(--bg-primary);
+}
+
+.service-flip-card {
+    perspective: 1200px;
+}
+
+.service-flip-inner {
+    transition: transform var(--transition-slow);
+    transform-style: preserve-3d;
+}
+
+.service-flip-card:hover .service-flip-inner {
+    transform: rotateY(-180deg);
+}
+
+/* الكروت الزجاجية للخدمات (Glassmorphism Cards) */
+.service-flip-front,
+.service-flip-back {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-soft);
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    border-radius: 1.5rem;
+}
+
+.service-flip-back {
+    transform: rotateY(180deg);
+}
+
+/* ── 7. المهارات (Skills Section) ── */
+#skills {
+    background-color: var(--bg-secondary);
+}
+
+/* ── 8. الشهادات والاعتمادات (Certificates Section) ── */
+#certificates {
+    background-color: var(--bg-primary);
+}
+
+.glowing-certificate-card {
+    position: relative;
+    border-radius: 1.5rem;
+    background: #ffffff;
+    border: 1px solid rgba(0, 120, 200, 0.08);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04), 0 1px 4px rgba(0, 0, 0, 0.04);
+    transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+        box-shadow 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+        border-color 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 10;
+    overflow: visible;
+    /* Entry animation */
+    animation: certCardFadeUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes certCardFadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Stagger each card */
+.glowing-certificate-card:nth-child(1) {
+    animation-delay: 0.05s;
+}
+
+.glowing-certificate-card:nth-child(2) {
+    animation-delay: 0.12s;
+}
+
+.glowing-certificate-card:nth-child(3) {
+    animation-delay: 0.19s;
+}
+
+.glowing-certificate-card:nth-child(4) {
+    animation-delay: 0.26s;
+}
+
+.glowing-certificate-card:nth-child(5) {
+    animation-delay: 0.33s;
+}
+
+.glowing-certificate-card:nth-child(6) {
+    animation-delay: 0.40s;
+}
+
+.glowing-certificate-card:nth-child(7) {
+    animation-delay: 0.47s;
+}
+
+.dark .glowing-certificate-card {
+    background: linear-gradient(135deg, #0a1128 0%, #050c1a 100%);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.45);
+}
+
+/* ── Glow light underneath on hover ── */
+.glowing-certificate-card::after {
+    content: '';
+    position: absolute;
+    bottom: -18px;
+    left: 15%;
+    right: 15%;
+    height: 40px;
+    background: radial-gradient(ellipse at center, rgba(0, 194, 255, 0.7) 0%, rgba(0, 194, 255, 0) 72%);
+    opacity: 0;
+    transition: opacity 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+        transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+    pointer-events: none;
+    z-index: -1;
+    filter: blur(12px);
+    transform: scaleX(0.8);
+}
+
+/* Light mode: also show a light glow, just softer */
+.glowing-certificate-card:hover::after {
+    opacity: 0.6;
+    transform: scaleX(1.2);
+}
+
+.dark .glowing-certificate-card:hover::after {
+    opacity: 1;
+    transform: scaleX(1.3);
+}
+
+.glowing-certificate-card:hover {
+    transform: translateY(-18px);
+    border-color: rgba(0, 194, 255, 0.35);
+    box-shadow:
+        0 28px 55px -12px rgba(0, 100, 200, 0.12),
+        0 0 0 1px rgba(0, 194, 255, 0.08),
+        0 0 25px rgba(0, 194, 255, 0.1);
+}
+
+.dark .glowing-certificate-card:hover {
+    border-color: rgba(0, 194, 255, 0.5);
+    box-shadow:
+        0 35px 70px -15px rgba(0, 0, 0, 0.75),
+        0 0 0 1px rgba(0, 194, 255, 0.12),
+        0 0 50px rgba(0, 194, 255, 0.22);
+}
+
+/* ── 9. قصص النجاح (Success Cases) ── */
+#success-cases {
+    background-color: var(--bg-secondary);
+}
+
+#success-cases .grid>div {
+    background: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-soft);
+    transition: transform var(--transition-smooth), box-shadow var(--transition-smooth), border-color var(--transition-smooth);
+    border-radius: 1.5rem;
+}
+
+#success-cases .grid>div:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-hover);
+    border-color: var(--brand-light-blue);
+}
+
+/* ── 10. محتوى توعوي (Awareness & Testimonials Section) ── */
+#awareness {
+    background-color: var(--bg-primary);
+}
+
+/* ── 11. تواصل معنا (Contact Section) ── */
+#contact {
+    background-color: var(--bg-secondary);
+}
+
+/* أزرار التفاعل (Interactive Buttons) */
+.contact-btn {
+    background: linear-gradient(135deg, var(--brand-blue), var(--brand-light-blue));
+    color: #fff;
+    box-shadow: 0 4px 15px rgba(58, 134, 200, 0.3);
+    transition: all var(--transition-smooth);
+}
+
+.contact-btn:hover {
+    box-shadow: 0 8px 25px rgba(58, 134, 200, 0.5);
+    transform: translateY(-3px);
+}
+
+/* ── 12. الفوتر (Footer) ── */
+footer {
+    background: linear-gradient(to top, #020617, #0a1128);
+    color: #f8fafc;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+footer a {
+    transition: color var(--transition-fast), text-shadow var(--transition-fast);
+}
+
+footer a:hover {
+    color: var(--brand-light-blue);
+    text-shadow: 0 0 10px rgba(78, 168, 222, 0.5);
+}
+
+/* ── 13. التجاوب مع الشاشات (Responsive Media Queries) ── */
+
+/* شاشات الموبايل (Mobile) - بحد أقصى 768px */
+@media (max-width: 768px) {
+    #navbar {
+        width: calc(100% - 2rem);
+        border-radius: 1rem;
+    }
+
+    h1,
+    h2 {
+        font-size: 2rem !important;
+        line-height: 1.3;
+    }
+}
+
+/* شاشات التابلت (Tablet) - من 768px إلى 1024px */
+@media (min-width: 768px) and (max-width: 1024px) {
+    h1 {
+        font-size: 2.75rem !important;
+    }
+}
+
+/* شاشات اللابتوب والشاشات الكبيرة (Desktop) - أكبر من 1024px */
+@media (min-width: 1024px) {
+    .hero-container {
+        padding-top: 8rem;
+        padding-bottom: 8rem;
+    }
+}
+
+/* ── 14. فوتر زجاجي (Futuristic Footer Glassmorphism) ── */
+.futurism-glass {
+    background: rgba(10, 17, 40, 0.55);
+    backdrop-filter: blur(24px) saturate(1.6);
+    -webkit-backdrop-filter: blur(24px) saturate(1.6);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    box-shadow:
+        0 8px 32px rgba(0, 0, 0, 0.45),
+        0 0 0 1px rgba(0, 194, 255, 0.04) inset;
+}
+
+/* Fallback for light mode – keep it semi-transparent dark */
+:root:not(.dark) .futurism-glass {
+    background: rgba(7, 23, 57, 0.80);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* ── Footer Ambient Glow Pulse ── */
+@keyframes pulseGlow {
+
+    0%,
+    100% {
+        opacity: 0.4;
+        transform: translate(-50%, -50%) scale(1);
+    }
+
+    50% {
+        opacity: 0.7;
+        transform: translate(-50%, -50%) scale(1.12);
+    }
+}
+
+.animate-pulse-glow {
+    animation: pulseGlow 5s ease-in-out infinite;
+}
+
+/* ── Footer Floating Particles ── */
+@keyframes floatSlow {
+
+    0%,
+    100% {
+        transform: translateY(0px) translateX(0px);
+    }
+
+    33% {
+        transform: translateY(-18px) translateX(8px);
+    }
+
+    66% {
+        transform: translateY(-8px) translateX(-6px);
+    }
+}
+
+@keyframes floatSlower {
+
+    0%,
+    100% {
+        transform: translateY(0px) translateX(0px);
+    }
+
+    40% {
+        transform: translateY(-24px) translateX(-10px);
+    }
+
+    70% {
+        transform: translateY(-12px) translateX(14px);
+    }
+}
+
+.animate-float-slow {
+    animation: floatSlow 8s ease-in-out infinite;
+}
+
+.animate-float-slower {
+    animation: floatSlower 12s ease-in-out infinite;
+}

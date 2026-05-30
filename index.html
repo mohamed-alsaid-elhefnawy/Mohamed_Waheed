@@ -1,0 +1,2086 @@
+﻿<!DOCTYPE html>
+<html lang="ar" dir="rtl" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>أ. محمد وحيد | أخصائي التربية الخاصة والتخاطب وتعديل السلوك بالمنصورة</title>
+    <meta name="description"
+        content="الموقع الرسمي للأستاذ محمد وحيد، أخصائي التربية الخاصة والتخاطب وتعديل السلوك بالمنصورة. نقدم جلسات تخاطب، علاج صعوبات التعلم، تأهيل أطفال التوحد وفرط الحركة وتشتت الانتباه.">
+
+    <!-- Open Graph SEO -->
+    <meta property="og:title" content="أ. محمد وحيد | أخصائي التربية الخاصة والتخاطب وتعديل السلوك">
+    <meta property="og:description"
+        content="علاج مشاكل النطق واللثغات، تعديل السلوك، تنمية المهارات، وعلاج صعوبات التعلم بالمنصورة. جلسات متخصصة للأطفال.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mohamedwahid.com">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Tailwind CSS Play CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            navy: '#0B132B',
+                            darkNavy: '#1C2541',
+                            blue: '#3A86C8',
+                            lightBlue: '#4EA8DE',
+                            softBlue: '#F0F7FC',
+                            gray: '#F8FAFC',
+                            darkGray: '#0F172A',
+                            emerald: '#10B981',
+                            deepNavy: '#071426',
+                            cardNavy1: '#0B1D35',
+                            cardNavy2: '#102544'
+                        }
+                    },
+                    fontFamily: {
+                        cairo: ['Cairo', 'sans-serif'],
+                        outfit: ['Outfit', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Custom Styles -->
+    <style>
+        body {
+            font-family: 'Cairo', 'Outfit', sans-serif;
+        }
+
+        /* Custom smooth scroll progress bar */
+        #scroll-progress {
+            position: fixed;
+            top: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(to left, #3A86C8, #4EA8DE);
+            z-index: 100;
+            width: 0%;
+            transition: width 0.1s ease-out;
+        }
+
+        /* Soft text balance */
+        .text-balance {
+            text-wrap: balance;
+        }
+
+        /* ── Hero Ambient Glow ── */
+        @keyframes heroGlowDrift {
+            0% {
+                transform: scale(1) translateY(0px);
+                opacity: 1;
+            }
+
+            50% {
+                transform: scale(1.08) translateY(-12px);
+                opacity: 0.75;
+            }
+
+            100% {
+                transform: scale(1) translateY(0px);
+                opacity: 1;
+            }
+        }
+
+        @keyframes heroGlowDriftAlt {
+            0% {
+                transform: scale(1.05) translateY(0px);
+                opacity: 0.9;
+            }
+
+            50% {
+                transform: scale(0.95) translateY(10px);
+                opacity: 0.65;
+            }
+
+            100% {
+                transform: scale(1.05) translateY(0px);
+                opacity: 0.9;
+            }
+        }
+
+        @keyframes heroGlowFade {
+            0% {
+                opacity: 0.55;
+            }
+
+            50% {
+                opacity: 0.85;
+            }
+
+            100% {
+                opacity: 0.55;
+            }
+        }
+
+        .hero-glow-1 {
+            animation: heroGlowDrift 9s ease-in-out infinite;
+        }
+
+        .hero-glow-2 {
+            animation: heroGlowDriftAlt 12s ease-in-out infinite;
+        }
+
+        .hero-glow-3 {
+            animation: heroGlowFade 7s ease-in-out infinite;
+        }
+
+        .hero-glow-4 {
+            animation: heroGlowDrift 15s ease-in-out infinite reverse;
+        }
+
+        /* ── Service Card 3D Flip ── */
+        .service-flip-card {
+            perspective: 1200px;
+            height: 340px;
+        }
+
+        .service-flip-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.75s cubic-bezier(0.4, 0.2, 0.2, 1);
+            transform-style: preserve-3d;
+        }
+
+        .service-flip-card.is-flipped .service-flip-inner {
+            transform: rotateY(-180deg);
+        }
+
+        /* 3D bleed fix */
+        .service-flip-card.is-flipped .service-flip-front {
+            visibility: hidden;
+            transition: visibility 0s linear 0.35s;
+        }
+
+        .service-flip-card:not(.is-flipped) .service-flip-front {
+            visibility: visible;
+            transition: visibility 0s linear 0s;
+        }
+
+        .service-flip-front,
+        .service-flip-back {
+            position: absolute;
+            inset: 0;
+            backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
+            border-radius: 1rem;
+            overflow: hidden;
+        }
+
+        .service-flip-back {
+            transform: rotateY(180deg);
+        }
+
+        @keyframes serviceReveal {
+            0% {
+                transform: rotateY(0deg);
+            }
+
+            40% {
+                transform: rotateY(-180deg);
+            }
+
+            70% {
+                transform: rotateY(-180deg);
+            }
+
+            100% {
+                transform: rotateY(0deg);
+            }
+        }
+
+        .service-flip-card.reveal-once .service-flip-inner {
+            animation: serviceReveal 2.4s cubic-bezier(0.4, 0.2, 0.2, 1) forwards;
+        }
+    </style>
+</head>
+
+<body
+    class="bg-brand-gray text-slate-800 dark:bg-brand-deepNavy dark:text-slate-100 transition-colors duration-300 antialiased overflow-x-hidden">
+
+    <!-- Scroll Progress Bar -->
+    <div id="scroll-progress"></div>
+
+    <!-- Ultra Modern Floating Glassmorphic Navbar -->
+    <nav id="navbar"
+        class="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[calc(100%-2rem)] max-w-7xl bg-white/70 dark:bg-brand-deepNavy/75 backdrop-blur-xl border border-white/20 dark:border-brand-darkNavy/40 rounded-[24px] shadow-lg shadow-brand-darkNavy/[0.03] transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+
+                <!-- Logo & Brand with Modern Avatar Profile -->
+                <a href="#hero" class="flex items-center gap-3 group shrink-0">
+                    <div
+                        class="relative flex-shrink-0 w-12 h-12 rounded-full border-2 border-white dark:border-brand-darkNavy shadow-md shadow-brand-blue/25 transition-transform duration-300 group-hover:scale-105">
+                        <img src="icon.png" alt="أ. محمد وحيد" class="w-full h-full object-cover rounded-full">
+                    </div>
+                    <div class="flex flex-col items-start space-y-1">
+                        <span
+                            class="text-lg font-extrabold text-brand-darkNavy dark:text-white group-hover:text-brand-blue transition-colors duration-300">
+                            أ. محمد وحيد
+                        </span>
+                        <span class="text-xs text-brand-blue dark:text-brand-lightBlue font-bold">
+                            أخصائي التربية الخاصة والتخاطب
+                        </span>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation Links (Centered) -->
+                <div
+                    class="hidden md:flex items-center space-x-1 lg:space-x-1.5 space-x-reverse justify-center flex-1 mx-6">
+                    <a href="#hero"
+                        class="nav-link px-3.5 py-2.5 rounded-full text-sm font-semibold text-brand-darkNavy dark:text-slate-300 border border-transparent hover:text-white hover:bg-brand-darkNavy hover:shadow-md hover:shadow-brand-darkNavy/10 hover:scale-[1.02] active:scale-[0.98] dark:hover:bg-brand-blue dark:hover:shadow-brand-blue/15 transition-all duration-200">الرئيسية</a>
+                    <a href="#about"
+                        class="nav-link px-3.5 py-2.5 rounded-full text-sm font-semibold text-brand-darkNavy dark:text-slate-300 border border-transparent hover:text-white hover:bg-brand-darkNavy hover:shadow-md hover:shadow-brand-darkNavy/10 hover:scale-[1.02] active:scale-[0.98] dark:hover:bg-brand-blue dark:hover:shadow-brand-blue/15 transition-all duration-200">نبذة
+                        شخصية</a>
+                    <a href="#services"
+                        class="nav-link px-3.5 py-2.5 rounded-full text-sm font-semibold text-brand-darkNavy dark:text-slate-300 border border-transparent hover:text-white hover:bg-brand-darkNavy hover:shadow-md hover:shadow-brand-darkNavy/10 hover:scale-[1.02] active:scale-[0.98] dark:hover:bg-brand-blue dark:hover:shadow-brand-blue/15 transition-all duration-200">خدماتنا</a>
+                    <a href="#success-cases"
+                        class="nav-link px-3.5 py-2.5 rounded-full text-sm font-semibold text-brand-darkNavy dark:text-slate-300 border border-transparent hover:text-white hover:bg-brand-darkNavy hover:shadow-md hover:shadow-brand-darkNavy/10 hover:scale-[1.02] active:scale-[0.98] dark:hover:bg-brand-blue dark:hover:shadow-brand-blue/15 transition-all duration-200">قصص
+                        النجاح</a>
+                    <a href="#skills"
+                        class="nav-link px-3.5 py-2.5 rounded-full text-sm font-semibold text-brand-darkNavy dark:text-slate-300 border border-transparent hover:text-white hover:bg-brand-darkNavy hover:shadow-md hover:shadow-brand-darkNavy/10 hover:scale-[1.02] active:scale-[0.98] dark:hover:bg-brand-blue dark:hover:shadow-brand-blue/15 transition-all duration-200">المهارات</a>
+                    <a href="#certificates"
+                        class="nav-link px-3.5 py-2.5 rounded-full text-sm font-semibold text-brand-darkNavy dark:text-slate-300 border border-transparent hover:text-white hover:bg-brand-darkNavy hover:shadow-md hover:shadow-brand-darkNavy/10 hover:scale-[1.02] active:scale-[0.98] dark:hover:bg-brand-blue dark:hover:shadow-brand-blue/15 transition-all duration-200">الشهادات</a>
+                    <a href="#awareness"
+                        class="nav-link px-3.5 py-2.5 rounded-full text-sm font-semibold text-brand-darkNavy dark:text-slate-300 border border-transparent hover:text-white hover:bg-brand-darkNavy hover:shadow-md hover:shadow-brand-darkNavy/10 hover:scale-[1.02] active:scale-[0.98] dark:hover:bg-brand-blue dark:hover:shadow-brand-blue/15 transition-all duration-200">محتوى
+                        توعوي</a>
+                    <a href="#contact"
+                        class="nav-link px-3.5 py-2.5 rounded-full text-sm font-semibold text-brand-darkNavy dark:text-slate-300 border border-transparent hover:text-white hover:bg-brand-darkNavy hover:shadow-md hover:shadow-brand-darkNavy/10 hover:scale-[1.02] active:scale-[0.98] dark:hover:bg-brand-blue dark:hover:shadow-brand-blue/15 transition-all duration-200">اتصل
+                        بنا</a>
+                </div>
+
+                <!-- Utilities (Dark Mode + Glowing Consultation Button) -->
+                <div class="flex items-center space-x-3 space-x-reverse shrink-0">
+                    <!-- Dark Mode Toggle -->
+                    <button id="dark-mode-toggle"
+                        class="p-2.5 rounded-full border border-slate-200/50 dark:border-brand-darkNavy/50 bg-white/80 dark:bg-brand-deepNavy/80 text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-brand-blue/30"
+                        aria-label="Toggle dark mode">
+                        <!-- Sun Icon -->
+                        <i data-lucide="sun" class="w-5 h-5 hidden dark:block text-amber-400"></i>
+                        <!-- Moon Icon -->
+                        <i data-lucide="moon" class="w-5 h-5 block dark:hidden text-slate-600"></i>
+                    </button>
+
+                    <!-- Consultation CTA with Glowing Effect -->
+                    <a href="#contact"
+                        class="hidden lg:inline-flex items-center justify-center px-5 py-2.5 rounded-full text-sm font-semibold bg-gradient-to-r from-brand-blue to-brand-lightBlue hover:from-brand-blue/95 hover:to-brand-lightBlue/95 text-white shadow-lg shadow-brand-blue/20 hover:shadow-xl hover:shadow-brand-blue/35 transition-all duration-300 hover:scale-[1.03] active:scale-[0.97] relative overflow-hidden group">
+                        <span
+                            class="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+                        حجز استشارة
+                    </a>
+
+                    <!-- Mobile Menu Button -->
+                    <button id="mobile-menu-toggle"
+                        class="md:hidden p-2 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-all duration-200"
+                        aria-label="Open mobile menu">
+                        <i data-lucide="menu" id="menu-icon-open" class="w-6 h-6"></i>
+                        <i data-lucide="x" id="menu-icon-close" class="w-6 h-6 hidden"></i>
+                    </button>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Floating Mobile Popover Menu -->
+        <div id="mobile-menu"
+            class="hidden md:hidden bg-white/95 dark:bg-brand-deepNavy/95 backdrop-blur-xl border border-slate-100 dark:border-brand-darkNavy/80 rounded-2xl shadow-xl absolute top-[90px] left-0 w-full p-2 transition-all duration-300">
+            <div class="px-4 py-4 space-y-1.5">
+                <a href="#hero"
+                    class="mobile-nav-link block px-4 py-3 rounded-xl text-base font-medium text-brand-darkNavy dark:text-slate-300 hover:bg-brand-darkNavy hover:text-white dark:hover:bg-brand-blue dark:hover:text-white transition-all duration-200">الرئيسية</a>
+                <a href="#about"
+                    class="mobile-nav-link block px-4 py-3 rounded-xl text-base font-medium text-brand-darkNavy dark:text-slate-300 hover:bg-brand-darkNavy hover:text-white dark:hover:bg-brand-blue dark:hover:text-white transition-all duration-200">نبذة
+                    شخصية</a>
+                <a href="#services"
+                    class="mobile-nav-link block px-4 py-3 rounded-xl text-base font-medium text-brand-darkNavy dark:text-slate-300 hover:bg-brand-darkNavy hover:text-white dark:hover:bg-brand-blue dark:hover:text-white transition-all duration-200">خدماتنا</a>
+                <a href="#success-cases"
+                    class="mobile-nav-link block px-4 py-3 rounded-xl text-base font-medium text-brand-darkNavy dark:text-slate-300 hover:bg-brand-darkNavy hover:text-white dark:hover:bg-brand-blue dark:hover:text-white transition-all duration-200">قصص
+                    النجاح</a>
+                <a href="#skills"
+                    class="mobile-nav-link block px-4 py-3 rounded-xl text-base font-medium text-brand-darkNavy dark:text-slate-300 hover:bg-brand-darkNavy hover:text-white dark:hover:bg-brand-blue dark:hover:text-white transition-all duration-200">المهارات</a>
+                <a href="#certificates"
+                    class="mobile-nav-link block px-4 py-3 rounded-xl text-base font-medium text-brand-darkNavy dark:text-slate-300 hover:bg-brand-darkNavy hover:text-white dark:hover:bg-brand-blue dark:hover:text-white transition-all duration-200">الشهادات</a>
+                <a href="#awareness"
+                    class="mobile-nav-link block px-4 py-3 rounded-xl text-base font-medium text-brand-darkNavy dark:text-slate-300 hover:bg-brand-darkNavy hover:text-white dark:hover:bg-brand-blue dark:hover:text-white transition-all duration-200">محتوى
+                    توعوي</a>
+                <a href="#contact"
+                    class="mobile-nav-link block px-4 py-3 rounded-xl text-base font-medium text-brand-darkNavy dark:text-slate-300 hover:bg-brand-darkNavy hover:text-white dark:hover:bg-brand-blue dark:hover:text-white transition-all duration-200">اتصل
+                    بنا</a>
+
+                <div class="pt-4 border-t border-slate-100 dark:border-brand-darkNavy">
+                    <a href="#contact"
+                        class="flex w-full items-center justify-center px-4 py-3 rounded-xl text-base font-semibold bg-brand-blue text-white shadow-sm hover:bg-brand-blue/90 transition-all duration-200">
+                        حجز استشارة مجانية
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero"
+        class="relative min-h-[calc(100vh-80px)] flex items-center pt-28 pb-16 lg:pt-36 lg:pb-24 overflow-hidden bg-[linear-gradient(160deg,#eef7fd_0%,#f5faff_28%,#ffffff_55%,#f8fafc_100%)] dark:bg-none dark:bg-transparent">
+
+        <!-- Soft Ambient Blue Glow Layer -->
+        <div class="absolute inset-0 z-0 pointer-events-none" aria-hidden="true">
+
+            <!-- Primary large glow — top-right, behind hero image -->
+            <div class="hero-glow-1 absolute -top-16 -right-24 w-[560px] h-[560px] rounded-full pointer-events-none"
+                style="background: radial-gradient(ellipse at center, rgba(78,168,222,0.13) 0%, rgba(58,134,200,0.07) 45%, transparent 75%); filter: blur(48px);">
+            </div>
+
+            <!-- Secondary glow — upper center-right arc -->
+            <div class="hero-glow-2 absolute top-0 right-1/4 w-[420px] h-[320px] rounded-full pointer-events-none"
+                style="background: radial-gradient(ellipse at 60% 30%, rgba(147,210,240,0.11) 0%, rgba(78,168,222,0.06) 50%, transparent 75%); filter: blur(56px);">
+            </div>
+
+            <!-- Subtle cyan accent — very top edge -->
+            <div class="hero-glow-3 absolute -top-8 left-1/3 w-[500px] h-[180px] rounded-full pointer-events-none"
+                style="background: radial-gradient(ellipse at center, rgba(186,230,253,0.18) 0%, rgba(147,210,240,0.08) 55%, transparent 80%); filter: blur(40px);">
+            </div>
+
+            <!-- Deep soft fill — mid-right for text column warmth -->
+            <div class="hero-glow-4 absolute top-1/4 right-0 w-[380px] h-[460px] rounded-full pointer-events-none"
+                style="background: radial-gradient(ellipse at 70% 40%, rgba(58,134,200,0.07) 0%, rgba(186,230,253,0.05) 50%, transparent 75%); filter: blur(64px);">
+            </div>
+
+            <!-- Faint bottom-left breathing orb -->
+            <div class="hero-glow-2 absolute bottom-10 left-8 w-[320px] h-[320px] rounded-full pointer-events-none"
+                style="background: radial-gradient(ellipse at center, rgba(147,210,240,0.09) 0%, transparent 70%); filter: blur(52px);">
+            </div>
+
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+
+                <!-- Text Content -->
+                <div class="lg:col-span-7 flex flex-col items-start space-y-6 text-right order-last lg:order-first">
+                    <!-- Badge -->
+                    <span
+                        class="inline-flex items-center px-3.5 py-1.5 rounded-full text-xs font-semibold bg-brand-blue/10 text-brand-blue dark:bg-brand-blue/20 dark:text-brand-lightBlue">
+                        <i data-lucide="award" class="w-3.5 h-3.5 ml-1.5"></i>
+                        أخصائي معتمد وموثوق
+                    </span>
+
+                    <h1
+                        class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-brand-darkNavy dark:text-white leading-tight text-balance">
+                        نساعد طفلك ليعبر عن نفسه <span class="text-brand-blue dark:text-brand-lightBlue">بثقة
+                            وطلاقة</span>
+                    </h1>
+
+                    <p class="text-lg text-slate-600 dark:text-slate-300 max-w-2xl leading-relaxed">
+                        جلسات تخاطب متخصصة، برامج تعديل السلوك وتنمية مهارات الأطفال، تأهيل أطفال طيف التوحد، فرط الحركة
+                        وتشتت الانتباه (ADHD)، وصعوبات التعلم، تحت إشراف علمي دقيق بالمنصورة.
+                    </p>
+
+                    <!-- CTAs -->
+                    <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 w-full sm:w-auto pt-2">
+                        <!-- Direct Consultation -->
+                        <a href="#contact"
+                            class="inline-flex items-center justify-center px-8 py-4 rounded-full text-base font-semibold bg-brand-blue hover:bg-brand-blue/90 text-white shadow-lg shadow-brand-blue/25 dark:shadow-[0_0_15px_rgba(58,134,200,0.4)] hover:shadow-xl transition-all duration-200">
+                            <i data-lucide="calendar" class="w-5 h-5 ml-2"></i>
+                            حجز موعد استشارة
+                        </a>
+
+                        <!-- WhatsApp Chat -->
+                        <a href="https://wa.me/201095100240?text=مرحباً%20دكتور%20محمد،%20أود%20الاستفسار%20عن%20جلسات%20التأهيل"
+                            target="_blank" rel="noopener noreferrer"
+                            class="group inline-flex items-center justify-center px-8 py-4 rounded-full text-base font-semibold border-2 border-[#25D366] text-[#25D366] bg-transparent hover:bg-[#25D366] hover:text-white shadow-md hover:shadow-lg hover:shadow-[#25D366]/20 transition-all duration-300 hover:scale-[1.03] active:scale-[0.97]">
+                            <svg class="w-5 h-5 ml-2 fill-current transition-colors duration-300" viewBox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M12.012 2c-5.506 0-9.988 4.482-9.988 9.988 0 1.76.457 3.473 1.332 4.98L2 22l5.197-1.363a9.924 9.924 0 004.815 1.251c5.507 0 9.99-4.483 9.99-9.99 0-2.66-1.037-5.161-2.923-7.047A9.917 9.917 0 0012.012 2zm5.726 14.153c-.25.703-1.442 1.335-2.006 1.424-.516.082-1.196.149-3.418-.771-2.843-1.177-4.675-4.062-4.817-4.252-.142-.19-1.144-1.523-1.144-2.906 0-1.383.723-2.06.98-2.327.256-.266.56-.332.746-.332.186 0 .373.003.535.01.169.007.397-.064.62.477.229.553.784 1.912.85 2.048.068.136.113.294.023.477-.09.183-.136.294-.272.453-.136.159-.285.353-.408.474-.136.136-.28.285-.121.556.16.271.71 1.171 1.522 1.895.811.724 1.493.948 1.764 1.083.272.136.43.113.593-.075.162-.189.698-.813.884-1.092.187-.28.373-.234.63-.138.257.096 1.63.768 1.91.903.28.136.467.204.534.322.067.118.067.684-.183 1.387z" />
+                            </svg>
+                            تواصل عبر واتساب
+                        </a>
+                    </div>
+
+                    <!-- Statistics/Highlights -->
+                    <div
+                        class="grid grid-cols-3 gap-4 sm:gap-6 w-full pt-8 border-t border-slate-200/50 dark:border-brand-darkNavy/50 font-outfit">
+                        <div
+                            class="group flex flex-col items-center justify-center text-center p-4 sm:p-5 rounded-2xl border border-slate-200/60 dark:border-white/5 bg-slate-50/50 dark:bg-gradient-to-br dark:from-brand-cardNavy1 dark:to-brand-cardNavy2 dark:shadow-xl dark:shadow-[#040b17]/50 transition-all duration-300 hover:scale-105 hover:bg-white hover:border-brand-blue/50 hover:shadow-[0_0_25px_rgba(58,134,200,0.4)] dark:hover:bg-brand-cardNavy2 dark:hover:border-brand-lightBlue/50 dark:hover:shadow-[0_0_25px_rgba(78,168,222,0.3)] cursor-default">
+                            <span
+                                class="block text-2xl sm:text-3xl font-extrabold text-brand-darkNavy dark:text-white font-sans transition-colors duration-300 group-hover:text-brand-blue dark:group-hover:text-brand-lightBlue"
+                                dir="ltr">99+</span>
+                            <span
+                                class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 font-sans font-cairo transition-colors duration-300 group-hover:text-brand-blue dark:group-hover:text-brand-lightBlue mt-1">حالة
+                                مستفيدة</span>
+                        </div>
+                        <div
+                            class="group flex flex-col items-center justify-center text-center p-4 sm:p-5 rounded-2xl border border-slate-200/60 dark:border-white/5 bg-slate-50/50 dark:bg-gradient-to-br dark:from-brand-cardNavy1 dark:to-brand-cardNavy2 dark:shadow-xl dark:shadow-[#040b17]/50 transition-all duration-300 hover:scale-105 hover:bg-white hover:border-brand-blue/50 hover:shadow-[0_0_25px_rgba(58,134,200,0.4)] dark:hover:bg-brand-cardNavy2 dark:hover:border-brand-lightBlue/50 dark:hover:shadow-[0_0_25px_rgba(78,168,222,0.3)] cursor-default">
+                            <span
+                                class="block text-2xl sm:text-3xl font-extrabold text-brand-darkNavy dark:text-white font-sans transition-colors duration-300 group-hover:text-brand-blue dark:group-hover:text-brand-lightBlue"
+                                dir="ltr">5+</span>
+                            <span
+                                class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 font-sans font-cairo transition-colors duration-300 group-hover:text-brand-blue dark:group-hover:text-brand-lightBlue mt-1">سنوات
+                                خبرة</span>
+                        </div>
+                        <div
+                            class="group flex flex-col items-center justify-center text-center p-4 sm:p-5 rounded-2xl border border-slate-200/60 dark:border-white/5 bg-slate-50/50 dark:bg-gradient-to-br dark:from-brand-cardNavy1 dark:to-brand-cardNavy2 dark:shadow-xl dark:shadow-[#040b17]/50 transition-all duration-300 hover:scale-105 hover:bg-white hover:border-brand-blue/50 hover:shadow-[0_0_25px_rgba(58,134,200,0.4)] dark:hover:bg-brand-cardNavy2 dark:hover:border-brand-lightBlue/50 dark:hover:shadow-[0_0_25px_rgba(78,168,222,0.3)] cursor-default">
+                            <span
+                                class="block text-2xl sm:text-3xl font-extrabold text-brand-darkNavy dark:text-white font-sans transition-colors duration-300 group-hover:text-brand-blue dark:group-hover:text-brand-lightBlue"
+                                dir="ltr">100%</span>
+                            <span
+                                class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 font-sans font-cairo transition-colors duration-300 group-hover:text-brand-blue dark:group-hover:text-brand-lightBlue mt-1">سرية
+                                وخصوصية</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hero Image Column -->
+                <div class="lg:col-span-5 w-full max-w-md lg:max-w-none mx-auto relative order-first lg:order-last">
+                    <!-- Elegant frame styling -->
+                    <div
+                        class="relative rounded-2xl overflow-hidden shadow-2xl border border-white/50 dark:border-brand-darkNavy bg-white dark:bg-brand-deepNavy p-2 transform transition-transform duration-300 hover:scale-[1.01]">
+                        <img src="therapy_hero.png" alt="عيادة التربية الخاصة والتخاطب أ. محمد وحيد"
+                            class="w-full h-auto object-cover rounded-xl" loading="eager">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-brand-darkNavy/20 to-transparent pointer-events-none">
+                        </div>
+                    </div>
+                    <!-- Absolute Badges -->
+                    <div
+                        class="absolute -bottom-5 -right-5 bg-white dark:bg-gradient-to-br dark:from-brand-cardNavy1 dark:to-brand-cardNavy2 border border-slate-100 dark:border-white/5 dark:shadow-xl dark:shadow-[#040b17]/60 dark:backdrop-blur-md shadow-xl px-5 py-3.5 rounded-2xl flex items-center space-x-3 space-x-reverse">
+                        <div
+                            class="p-2 bg-brand-blue/15 dark:bg-brand-blue/20 rounded-xl text-brand-blue dark:text-brand-lightBlue">
+                            <i data-lucide="shield-check" class="w-6 h-6"></i>
+                        </div>
+                        <div>
+                            <span class="block text-xs text-slate-400 dark:text-slate-500">الترخيص الطبي</span>
+                            <span class="text-sm font-bold text-slate-700 dark:text-slate-200">معتمد من وزارة
+                                الصحة</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 lg:py-28 bg-white dark:bg-brand-deepNavy transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <!-- Section Header -->
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span
+                    class="inline-block text-xs font-semibold uppercase tracking-wider text-brand-blue dark:text-brand-lightBlue bg-brand-blue/10 dark:bg-brand-blue/20 px-3 py-1 rounded-full">قصتنا
+                    ورؤيتنا</span>
+                <h2 class="text-3xl sm:text-4xl font-bold mt-2 text-brand-darkNavy dark:text-white">نبذة شخصية</h2>
+                <div class="w-16 h-1 bg-brand-blue mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <!-- About Content Grid -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <!-- Left: Info -->
+                <div class="lg:col-span-7 space-y-6">
+                    <h3 class="text-2xl font-bold text-brand-darkNavy dark:text-white">
+                        الأستاذ محمد وحيد
+                    </h3>
+                    <p class="text-brand-blue dark:text-brand-lightBlue font-medium text-lg">
+                        أخصائي التربية الخاصة واضطرابات النطق والكلام وتعديل سلوك الأطفال والمراهقين
+                    </p>
+                    <p class="text-slate-600 dark:text-slate-300 leading-relaxed">
+                        بدأت رحلتي الأكاديمية عام 2020 في كلية التربية الخاصة — جامعة الأزهر الشريف، وأتممت تخرجي خلال
+                        الفترة 2024 / 2025. خلال هذه السنوات حصلت على تدريب مكثف في التخاطب، تعديل السلوك، تنمية
+                        المهارات، وصعوبات التعلم، إلى جانب دورات متخصصة في تأهيل اضطراب طيف التوحد.
+                    </p>
+                    <p class="text-slate-600 dark:text-slate-300 leading-relaxed">
+                        أعمل وفق فلسفة واضحة: كل طفل قصة فريدة. لذلك أبني لكل حالة خطة فردية مبنية على تقييم دقيق، وأشرك
+                        الأسرة في كل خطوة، لأن النجاح الحقيقي يبدأ من المنزل وينعكس في الحياة اليومية.
+                    </p>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
+                        <div class="flex items-start space-x-3 space-x-reverse">
+                            <div
+                                class="p-2 bg-brand-softBlue dark:bg-brand-deepNavy rounded-lg text-brand-blue dark:text-brand-lightBlue mt-1">
+                                <i data-lucide="check" class="w-4 h-4"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-800 dark:text-slate-200">برامج علاجية مخصصة</h4>
+                                <p class="text-xs text-slate-500 dark:text-slate-400">تصميم خطة تأهيلية تناسب قدرات طفلك
+                                    الفردية</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-3 space-x-reverse">
+                            <div
+                                class="p-2 bg-brand-softBlue dark:bg-brand-deepNavy rounded-lg text-brand-blue dark:text-brand-lightBlue mt-1">
+                                <i data-lucide="users" class="w-4 h-4"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-800 dark:text-slate-200">إشراك وتوجيه أولياء الأمور</h4>
+                                <p class="text-xs text-slate-500 dark:text-slate-400">توفير الدعم والإرشادات للأسر
+                                    لمتابعة الحالة من المنزل</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Pillar Cards -->
+                <div class="lg:col-span-5 grid grid-cols-1 gap-6">
+                    <!-- Vision Card -->
+                    <div
+                        class="p-6 rounded-2xl bg-brand-gray dark:bg-gradient-to-br dark:from-brand-cardNavy1 dark:to-brand-cardNavy2 border border-slate-100 dark:border-white/5 dark:shadow-xl dark:shadow-[#040b17]/60 dark:backdrop-blur-md transition-all duration-300 hover:shadow-md">
+                        <div class="flex items-center space-x-4 space-x-reverse">
+                            <div
+                                class="p-3 bg-brand-blue/10 dark:bg-brand-blue/20 rounded-xl text-brand-blue dark:text-brand-lightBlue">
+                                <i data-lucide="eye" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-bold text-brand-darkNavy dark:text-white">رؤيتنا</h4>
+                                <p class="text-sm text-slate-600 dark:text-slate-300 mt-1">
+                                    تأسيس جيل قادر على التواصل الفعّال والاندماج التام في المجتمع دون خجل أو صعوبة.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Mission Card -->
+                    <div
+                        class="p-6 rounded-2xl bg-brand-gray dark:bg-gradient-to-br dark:from-brand-cardNavy1 dark:to-brand-cardNavy2 border border-slate-100 dark:border-white/5 dark:shadow-xl dark:shadow-[#040b17]/60 dark:backdrop-blur-md transition-all duration-300 hover:shadow-md">
+                        <div class="flex items-center space-x-4 space-x-reverse">
+                            <div
+                                class="p-3 bg-brand-blue/10 dark:bg-brand-blue/20 rounded-xl text-brand-blue dark:text-brand-lightBlue">
+                                <i data-lucide="target" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-bold text-brand-darkNavy dark:text-white">رسالتنا</h4>
+                                <p class="text-sm text-slate-600 dark:text-slate-300 mt-1">
+                                    تقديم رعاية سلوكية وتعليمية ونطقية مبنية على البراهين العلمية، بمشاركة فاعلة من
+                                    الأهل.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Philosophy Card -->
+                    <div
+                        class="p-6 rounded-2xl bg-brand-gray dark:bg-gradient-to-br dark:from-brand-cardNavy1 dark:to-brand-cardNavy2 border border-slate-100 dark:border-white/5 dark:shadow-xl dark:shadow-[#040b17]/60 dark:backdrop-blur-md transition-all duration-300 hover:shadow-md">
+                        <div class="flex items-center space-x-4 space-x-reverse">
+                            <div
+                                class="p-3 bg-brand-blue/10 dark:bg-brand-blue/20 rounded-xl text-brand-blue dark:text-brand-lightBlue">
+                                <i data-lucide="heart" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-bold text-brand-darkNavy dark:text-white">قيمنا</h4>
+                                <p class="text-sm text-slate-600 dark:text-slate-300 mt-1">
+                                    الصبر التام، الاحترام غير المشروط لقدرات الطفل، والالتزام بالأمانة العلمية والسرية.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 lg:py-28 bg-brand-gray dark:bg-brand-deepNavy transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <!-- Section Header -->
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span
+                    class="inline-block text-xs font-semibold uppercase tracking-wider text-brand-blue dark:text-brand-lightBlue bg-brand-blue/10 dark:bg-brand-blue/20 px-3 py-1 rounded-full">خدماتنا
+                    العلاجية</span>
+                <h2 class="text-3xl sm:text-4xl font-bold mt-2 text-brand-darkNavy dark:text-white">مجالات التخصص
+                    والتأهيل</h2>
+                <div class="w-16 h-1 bg-brand-blue mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <!-- Services Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <!-- Service 1 -->
+                <div class="service-flip-card relative group">
+                    <div class="service-flip-inner">
+                        <!-- Front Face (Image) -->
+                        <div
+                            class="service-flip-front bg-brand-darkNavy border border-slate-100 dark:border-white/5 rounded-2xl overflow-hidden shadow-sm">
+                            <img src="جلسات تخاطب.jpg" alt="جلسات تخاطب"
+                                class="absolute inset-0 w-full h-full object-cover">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-brand-darkNavy/90 via-brand-darkNavy/30 to-transparent flex flex-col justify-end p-6">
+                                <h3 class="text-2xl font-extrabold text-white">جلسات تخاطب</h3>
+                            </div>
+                            <!-- Eye Icon Container (Bottom Left) -->
+                            <div class="absolute bottom-6 left-6 z-10 flex flex-row items-center group/eye">
+                                <!-- Tooltip -->
+                                <div
+                                    class="bg-white/90 backdrop-blur-sm text-brand-darkNavy px-3 py-1.5 rounded-lg text-xs font-bold opacity-0 translate-x-4 group-hover/eye:opacity-100 group-hover/eye:translate-x-0 transition-all duration-300 ml-3 shadow-lg whitespace-nowrap pointer-events-none">
+                                    اقرأ المزيد
+                                </div>
+                                <!-- Icon Button -->
+                                <button onclick="this.closest('.service-flip-card').classList.add('is-flipped')"
+                                    class="w-10 h-10 rounded-full bg-white/20 backdrop-blur-md border border-white/30 flex items-center justify-center text-white hover:bg-brand-blue hover:border-brand-blue hover:scale-110 transition-all duration-300 shadow-[0_0_15px_rgba(0,0,0,0.2)]">
+                                    <i data-lucide="eye" class="w-5 h-5"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Back Face (Text & Action) -->
+                        <div
+                            class="service-flip-back bg-white dark:bg-gradient-to-br dark:from-brand-cardNavy1 dark:to-brand-cardNavy2 border border-slate-100 dark:border-white/5 rounded-2xl p-8 flex flex-col justify-between shadow-xl dark:shadow-[#040b17]/60">
+                            <!-- Close button -->
+                            <div class="absolute top-4 left-4 z-10 flex flex-row items-center group/back cursor-pointer"
+                                onclick="this.closest('.service-flip-card').classList.remove('is-flipped')">
+                                <!-- Tooltip -->
+                                <div
+                                    class="bg-slate-800 dark:bg-slate-700 text-white px-2 py-1 rounded text-xs font-bold opacity-0 translate-x-2 group-hover/back:opacity-100 group-hover/back:translate-x-0 transition-all duration-300 ml-2 shadow-sm pointer-events-none whitespace-nowrap">
+                                    رجوع
+                                </div>
+                                <!-- Button -->
+                                <button
+                                    class="w-8 h-8 flex items-center justify-center text-slate-400 hover:text-brand-blue transition-colors rounded-full hover:bg-brand-blue/10 bg-slate-50 dark:bg-slate-800/50 shadow-sm border border-slate-200 dark:border-slate-700">
+                                    <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                                </button>
+                            </div>
+
+                            <div>
+                                <div
+                                    class="w-12 h-12 rounded-xl bg-brand-blue/10 dark:bg-brand-blue/20 text-brand-blue dark:text-brand-lightBlue flex items-center justify-center mb-6 mt-2">
+                                    <i data-lucide="megaphone" class="w-6 h-6"></i>
+                                </div>
+                                <h3 class="text-xl font-bold text-brand-darkNavy dark:text-white mb-3">جلسات تخاطب</h3>
+                                <p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">علاج عيوب النطق،
+                                    اللثغات، تأخر نمو اللغة لدى الأطفال، التهتة والتلعثم، واضطرابات الصوت والكلام،
+                                    واستعادة مهارات النطق بطرق تفاعلية محببة للطفل.</p>
+                            </div>
+
+                            <div class="mt-6">
+                                <button onclick="requestService('speech')"
+                                    class="w-full flex items-center justify-center gap-2 py-3 rounded-xl bg-gradient-to-r from-brand-blue to-brand-lightBlue text-white font-bold text-sm shadow-lg shadow-brand-blue/20 hover:shadow-xl hover:shadow-brand-blue/30 hover:-translate-y-1 transition-all duration-300">
+                                    طلب خدمة
+                                    <i data-lucide="arrow-left" class="w-4 h-4"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="service-flip-card relative group">
+                    <div class="service-flip-inner">
+                        <!-- Front Face (Image) -->
+                        <div
+                            class="service-flip-front bg-brand-darkNavy border border-slate-100 dark:border-white/5 rounded-2xl overflow-hidden shadow-sm">
+                            <img src="تعديل سلوك.jpg" alt="تعديل سلوك"
+                                class="absolute inset-0 w-full h-full object-cover">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-brand-darkNavy/90 via-brand-darkNavy/30 to-transparent flex flex-col justify-end p-6">
+                                <h3 class="text-2xl font-extrabold text-white">تعديل سلوك</h3>
+                            </div>
+                            <!-- Eye Icon Container (Bottom Left) -->
+                            <div class="absolute bottom-6 left-6 z-10 flex flex-row items-center group/eye">
+                                <!-- Tooltip -->
+                                <div
+                                    class="bg-white/90 backdrop-blur-sm text-brand-darkNavy px-3 py-1.5 rounded-lg text-xs font-bold opacity-0 translate-x-4 group-hover/eye:opacity-100 group-hover/eye:translate-x-0 transition-all duration-300 ml-3 shadow-lg whitespace-nowrap pointer-events-none">
+                                    اقرأ المزيد
+                                </div>
+                                <!-- Icon Button -->
+                                <button onclick="this.closest('.service-flip-card').classList.add('is-flipped')"
+                                    class="w-10 h-10 rounded-full bg-white/20 backdrop-blur-md border border-white/30 flex items-center justify-center text-white hover:bg-brand-blue hover:border-brand-blue hover:scale-110 transition-all duration-300 shadow-[0_0_15px_rgba(0,0,0,0.2)]">
+                                    <i data-lucide="eye" class="w-5 h-5"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Back Face (Text & Action) -->
+                        <div
+                            class="service-flip-back bg-white dark:bg-gradient-to-br dark:from-brand-cardNavy1 dark:to-brand-cardNavy2 border border-slate-100 dark:border-white/5 rounded-2xl p-8 flex flex-col justify-between shadow-xl dark:shadow-[#040b17]/60">
+                            <!-- Close button -->
+                            <div class="absolute top-4 left-4 z-10 flex flex-row items-center group/back cursor-pointer"
+                                onclick="this.closest('.service-flip-card').classList.remove('is-flipped')">
+                                <!-- Tooltip -->
+                                <div
+                                    class="bg-slate-800 dark:bg-slate-700 text-white px-2 py-1 rounded text-xs font-bold opacity-0 translate-x-2 group-hover/back:opacity-100 group-hover/back:translate-x-0 transition-all duration-300 ml-2 shadow-sm pointer-events-none whitespace-nowrap">
+                                    رجوع
+                                </div>
+                                <!-- Button -->
+                                <button
+                                    class="w-8 h-8 flex items-center justify-center text-slate-400 hover:text-brand-blue transition-colors rounded-full hover:bg-brand-blue/10 bg-slate-50 dark:bg-slate-800/50 shadow-sm border border-slate-200 dark:border-slate-700">
+                                    <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                                </button>
+                            </div>
+
+                            <div>
+                                <div
+                                    class="w-12 h-12 rounded-xl bg-brand-blue/10 dark:bg-brand-blue/20 text-brand-blue dark:text-brand-lightBlue flex items-center justify-center mb-6 mt-2">
+                                    <i data-lucide="smile" class="w-6 h-6"></i>
+                                </div>
+                                <h3 class="text-xl font-bold text-brand-darkNavy dark:text-white mb-3">تعديل سلوك</h3>
+                                <p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">التعامل العلمي مع
+                                    حالات العناد الشديد، الغضب السريع، السلوكيات العدوانية، والاضطرابات السلوكية لدى
+                                    الأطفال والمراهقين بأساليب تعديل سلوك إيجابية.</p>
+                            </div>
+
+                            <div class="mt-6">
+                                <button onclick="requestService('behavior')"
+                                    class="w-full flex items-center justify-center gap-2 py-3 rounded-xl bg-gradient-to-r from-brand-blue to-brand-lightBlue text-white font-bold text-sm shadow-lg shadow-brand-blue/20 hover:shadow-xl hover:shadow-brand-blue/30 hover:-translate-y-1 transition-all duration-300">
+                                    طلب خدمة
+                                    <i data-lucide="arrow-left" class="w-4 h-4"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="service-flip-card relative group">
+                    <div class="service-flip-inner">
+                        <!-- Front Face (Image) -->
+                        <div
+                            class="service-flip-front bg-brand-darkNavy border border-slate-100 dark:border-white/5 rounded-2xl overflow-hidden shadow-sm">
+                            <img src="تنمية مهارات.jpg" alt="تنمية مهارات"
+                                class="absolute inset-0 w-full h-full object-cover">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-brand-darkNavy/90 via-brand-darkNavy/30 to-transparent flex flex-col justify-end p-6">
+                                <h3 class="text-2xl font-extrabold text-white">تنمية مهارات</h3>
+                            </div>
+                            <!-- Eye Icon Container (Bottom Left) -->
+                            <div class="absolute bottom-6 left-6 z-10 flex flex-row items-center group/eye">
+                                <!-- Tooltip -->
+                                <div
+                                    class="bg-white/90 backdrop-blur-sm text-brand-darkNavy px-3 py-1.5 rounded-lg text-xs font-bold opacity-0 translate-x-4 group-hover/eye:opacity-100 group-hover/eye:translate-x-0 transition-all duration-300 ml-3 shadow-lg whitespace-nowrap pointer-events-none">
+                                    اقرأ المزيد
+                                </div>
+                                <!-- Icon Button -->
+                                <button onclick="this.closest('.service-flip-card').classList.add('is-flipped')"
+                                    class="w-10 h-10 rounded-full bg-white/20 backdrop-blur-md border border-white/30 flex items-center justify-center text-white hover:bg-brand-blue hover:border-brand-blue hover:scale-110 transition-all duration-300 shadow-[0_0_15px_rgba(0,0,0,0.2)]">
+                                    <i data-lucide="eye" class="w-5 h-5"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Back Face (Text & Action) -->
+                        <div
+                            class="service-flip-back bg-white dark:bg-gradient-to-br dark:from-brand-cardNavy1 dark:to-brand-cardNavy2 border border-slate-100 dark:border-white/5 rounded-2xl p-8 flex flex-col justify-between shadow-xl dark:shadow-[#040b17]/60">
+                            <!-- Close button -->
+                            <div class="absolute top-4 left-4 z-10 flex flex-row items-center group/back cursor-pointer"
+                                onclick="this.closest('.service-flip-card').classList.remove('is-flipped')">
+                                <!-- Tooltip -->
+                                <div
+                                    class="bg-slate-800 dark:bg-slate-700 text-white px-2 py-1 rounded text-xs font-bold opacity-0 translate-x-2 group-hover/back:opacity-100 group-hover/back:translate-x-0 transition-all duration-300 ml-2 shadow-sm pointer-events-none whitespace-nowrap">
+                                    رجوع
+                                </div>
+                                <!-- Button -->
+                                <button
+                                    class="w-8 h-8 flex items-center justify-center text-slate-400 hover:text-brand-blue transition-colors rounded-full hover:bg-brand-blue/10 bg-slate-50 dark:bg-slate-800/50 shadow-sm border border-slate-200 dark:border-slate-700">
+                                    <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                                </button>
+                            </div>
+
+                            <div>
+                                <div
+                                    class="w-12 h-12 rounded-xl bg-brand-blue/10 dark:bg-brand-blue/20 text-brand-blue dark:text-brand-lightBlue flex items-center justify-center mb-6 mt-2">
+                                    <i data-lucide="brain-circuit" class="w-6 h-6"></i>
+                                </div>
+                                <h3 class="text-xl font-bold text-brand-darkNavy dark:text-white mb-3">تنمية مهارات</h3>
+                                <p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">أنشطة مخصصة لتقوية
+                                    الذاكرة، زيادة التركيز، تنمية التآزر الحركي البصري، تحسين الفهم والإدراك وتطوير
+                                    المهارات الاجتماعية والحياتية اليومية للطفل.</p>
+                            </div>
+
+                            <div class="mt-6">
+                                <button onclick="requestService('skills')"
+                                    class="w-full flex items-center justify-center gap-2 py-3 rounded-xl bg-gradient-to-r from-brand-blue to-brand-lightBlue text-white font-bold text-sm shadow-lg shadow-brand-blue/20 hover:shadow-xl hover:shadow-brand-blue/30 hover:-translate-y-1 transition-all duration-300">
+                                    طلب خدمة
+                                    <i data-lucide="arrow-left" class="w-4 h-4"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="service-flip-card relative group">
+                    <div class="service-flip-inner">
+                        <!-- Front Face (Image) -->
+                        <div
+                            class="service-flip-front bg-brand-darkNavy border border-slate-100 dark:border-white/5 rounded-2xl overflow-hidden shadow-sm">
+                            <img src="صعوبات تعلم.jpg" alt="صعوبات تعلم"
+                                class="absolute inset-0 w-full h-full object-cover">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-brand-darkNavy/90 via-brand-darkNavy/30 to-transparent flex flex-col justify-end p-6">
+                                <h3 class="text-2xl font-extrabold text-white">صعوبات تعلم</h3>
+                            </div>
+                            <!-- Eye Icon Container (Bottom Left) -->
+                            <div class="absolute bottom-6 left-6 z-10 flex flex-row items-center group/eye">
+                                <!-- Tooltip -->
+                                <div
+                                    class="bg-white/90 backdrop-blur-sm text-brand-darkNavy px-3 py-1.5 rounded-lg text-xs font-bold opacity-0 translate-x-4 group-hover/eye:opacity-100 group-hover/eye:translate-x-0 transition-all duration-300 ml-3 shadow-lg whitespace-nowrap pointer-events-none">
+                                    اقرأ المزيد
+                                </div>
+                                <!-- Icon Button -->
+                                <button onclick="this.closest('.service-flip-card').classList.add('is-flipped')"
+                                    class="w-10 h-10 rounded-full bg-white/20 backdrop-blur-md border border-white/30 flex items-center justify-center text-white hover:bg-brand-blue hover:border-brand-blue hover:scale-110 transition-all duration-300 shadow-[0_0_15px_rgba(0,0,0,0.2)]">
+                                    <i data-lucide="eye" class="w-5 h-5"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Back Face (Text & Action) -->
+                        <div
+                            class="service-flip-back bg-white dark:bg-gradient-to-br dark:from-brand-cardNavy1 dark:to-brand-cardNavy2 border border-slate-100 dark:border-white/5 rounded-2xl p-8 flex flex-col justify-between shadow-xl dark:shadow-[#040b17]/60">
+                            <!-- Close button -->
+                            <div class="absolute top-4 left-4 z-10 flex flex-row items-center group/back cursor-pointer"
+                                onclick="this.closest('.service-flip-card').classList.remove('is-flipped')">
+                                <!-- Tooltip -->
+                                <div
+                                    class="bg-slate-800 dark:bg-slate-700 text-white px-2 py-1 rounded text-xs font-bold opacity-0 translate-x-2 group-hover/back:opacity-100 group-hover/back:translate-x-0 transition-all duration-300 ml-2 shadow-sm pointer-events-none whitespace-nowrap">
+                                    رجوع
+                                </div>
+                                <!-- Button -->
+                                <button
+                                    class="w-8 h-8 flex items-center justify-center text-slate-400 hover:text-brand-blue transition-colors rounded-full hover:bg-brand-blue/10 bg-slate-50 dark:bg-slate-800/50 shadow-sm border border-slate-200 dark:border-slate-700">
+                                    <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                                </button>
+                            </div>
+
+                            <div>
+                                <div
+                                    class="w-12 h-12 rounded-xl bg-brand-blue/10 dark:bg-brand-blue/20 text-brand-blue dark:text-brand-lightBlue flex items-center justify-center mb-6 mt-2">
+                                    <i data-lucide="book-open" class="w-6 h-6"></i>
+                                </div>
+                                <h3 class="text-xl font-bold text-brand-darkNavy dark:text-white mb-3">صعوبات تعلم</h3>
+                                <p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">تأهيل الأطفال
+                                    الذين يعانون من صعوبات التعلم النمائية أو الأكاديمية (عسر القراءة والكتابة والتهجئة،
+                                    صعوبات الحساب والعد) بخطط دراسية وعلاجية مبسطة.</p>
+                            </div>
+
+                            <div class="mt-6">
+                                <button onclick="requestService('learning')"
+                                    class="w-full flex items-center justify-center gap-2 py-3 rounded-xl bg-gradient-to-r from-brand-blue to-brand-lightBlue text-white font-bold text-sm shadow-lg shadow-brand-blue/20 hover:shadow-xl hover:shadow-brand-blue/30 hover:-translate-y-1 transition-all duration-300">
+                                    طلب خدمة
+                                    <i data-lucide="arrow-left" class="w-4 h-4"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 5 -->
+                <div class="service-flip-card relative group">
+                    <div class="service-flip-inner">
+                        <!-- Front Face (Image) -->
+                        <div
+                            class="service-flip-front bg-brand-darkNavy border border-slate-100 dark:border-white/5 rounded-2xl overflow-hidden shadow-sm">
+                            <img src="جلسات توحد.jpg" alt="جلسات توحد"
+                                class="absolute inset-0 w-full h-full object-cover">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-brand-darkNavy/90 via-brand-darkNavy/30 to-transparent flex flex-col justify-end p-6">
+                                <h3 class="text-2xl font-extrabold text-white">جلسات توحد</h3>
+                            </div>
+                            <!-- Eye Icon Container (Bottom Left) -->
+                            <div class="absolute bottom-6 left-6 z-10 flex flex-row items-center group/eye">
+                                <!-- Tooltip -->
+                                <div
+                                    class="bg-white/90 backdrop-blur-sm text-brand-darkNavy px-3 py-1.5 rounded-lg text-xs font-bold opacity-0 translate-x-4 group-hover/eye:opacity-100 group-hover/eye:translate-x-0 transition-all duration-300 ml-3 shadow-lg whitespace-nowrap pointer-events-none">
+                                    اقرأ المزيد
+                                </div>
+                                <!-- Icon Button -->
+                                <button onclick="this.closest('.service-flip-card').classList.add('is-flipped')"
+                                    class="w-10 h-10 rounded-full bg-white/20 backdrop-blur-md border border-white/30 flex items-center justify-center text-white hover:bg-brand-blue hover:border-brand-blue hover:scale-110 transition-all duration-300 shadow-[0_0_15px_rgba(0,0,0,0.2)]">
+                                    <i data-lucide="eye" class="w-5 h-5"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Back Face (Text & Action) -->
+                        <div
+                            class="service-flip-back bg-white dark:bg-gradient-to-br dark:from-brand-cardNavy1 dark:to-brand-cardNavy2 border border-slate-100 dark:border-white/5 rounded-2xl p-8 flex flex-col justify-between shadow-xl dark:shadow-[#040b17]/60">
+                            <!-- Close button -->
+                            <div class="absolute top-4 left-4 z-10 flex flex-row items-center group/back cursor-pointer"
+                                onclick="this.closest('.service-flip-card').classList.remove('is-flipped')">
+                                <!-- Tooltip -->
+                                <div
+                                    class="bg-slate-800 dark:bg-slate-700 text-white px-2 py-1 rounded text-xs font-bold opacity-0 translate-x-2 group-hover/back:opacity-100 group-hover/back:translate-x-0 transition-all duration-300 ml-2 shadow-sm pointer-events-none whitespace-nowrap">
+                                    رجوع
+                                </div>
+                                <!-- Button -->
+                                <button
+                                    class="w-8 h-8 flex items-center justify-center text-slate-400 hover:text-brand-blue transition-colors rounded-full hover:bg-brand-blue/10 bg-slate-50 dark:bg-slate-800/50 shadow-sm border border-slate-200 dark:border-slate-700">
+                                    <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                                </button>
+                            </div>
+
+                            <div>
+                                <div
+                                    class="w-12 h-12 rounded-xl bg-brand-blue/10 dark:bg-brand-blue/20 text-brand-blue dark:text-brand-lightBlue flex items-center justify-center mb-6 mt-2">
+                                    <i data-lucide="sparkles" class="w-6 h-6"></i>
+                                </div>
+                                <h3 class="text-xl font-bold text-brand-darkNavy dark:text-white mb-3">جلسات توحد</h3>
+                                <p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">تأهيل أطفال طيف
+                                    التوحد ببرامج عالمية معتمدة لتطوير القدرة على التواصل اللفظي وغير اللفظي، تقليل
+                                    السلوكيات النمطية، والدمج الاجتماعي التدريجي.</p>
+                            </div>
+
+                            <div class="mt-6">
+                                <button onclick="requestService('autism')"
+                                    class="w-full flex items-center justify-center gap-2 py-3 rounded-xl bg-gradient-to-r from-brand-blue to-brand-lightBlue text-white font-bold text-sm shadow-lg shadow-brand-blue/20 hover:shadow-xl hover:shadow-brand-blue/30 hover:-translate-y-1 transition-all duration-300">
+                                    طلب خدمة
+                                    <i data-lucide="arrow-left" class="w-4 h-4"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 6 -->
+                <div class="service-flip-card relative group">
+                    <div class="service-flip-inner">
+                        <!-- Front Face (Image) -->
+                        <div
+                            class="service-flip-front bg-brand-darkNavy border border-slate-100 dark:border-white/5 rounded-2xl overflow-hidden shadow-sm">
+                            <img src="فرط الحركه وتشتت الانتباه.jpg" alt="فرط الحركة وتشتت الانتباه"
+                                class="absolute inset-0 w-full h-full object-cover">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-brand-darkNavy/90 via-brand-darkNavy/30 to-transparent flex flex-col justify-end p-6">
+                                <h3 class="text-2xl font-extrabold text-white">فرط الحركة وتشتت الانتباه</h3>
+                            </div>
+                            <!-- Eye Icon Container (Bottom Left) -->
+                            <div class="absolute bottom-6 left-6 z-10 flex flex-row items-center group/eye">
+                                <!-- Tooltip -->
+                                <div
+                                    class="bg-white/90 backdrop-blur-sm text-brand-darkNavy px-3 py-1.5 rounded-lg text-xs font-bold opacity-0 translate-x-4 group-hover/eye:opacity-100 group-hover/eye:translate-x-0 transition-all duration-300 ml-3 shadow-lg whitespace-nowrap pointer-events-none">
+                                    اقرأ المزيد
+                                </div>
+                                <!-- Icon Button -->
+                                <button onclick="this.closest('.service-flip-card').classList.add('is-flipped')"
+                                    class="w-10 h-10 rounded-full bg-white/20 backdrop-blur-md border border-white/30 flex items-center justify-center text-white hover:bg-brand-blue hover:border-brand-blue hover:scale-110 transition-all duration-300 shadow-[0_0_15px_rgba(0,0,0,0.2)]">
+                                    <i data-lucide="eye" class="w-5 h-5"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Back Face (Text & Action) -->
+                        <div
+                            class="service-flip-back bg-white dark:bg-gradient-to-br dark:from-brand-cardNavy1 dark:to-brand-cardNavy2 border border-slate-100 dark:border-white/5 rounded-2xl p-8 flex flex-col justify-between shadow-xl dark:shadow-[#040b17]/60">
+                            <!-- Close button -->
+                            <div class="absolute top-4 left-4 z-10 flex flex-row items-center group/back cursor-pointer"
+                                onclick="this.closest('.service-flip-card').classList.remove('is-flipped')">
+                                <!-- Tooltip -->
+                                <div
+                                    class="bg-slate-800 dark:bg-slate-700 text-white px-2 py-1 rounded text-xs font-bold opacity-0 translate-x-2 group-hover/back:opacity-100 group-hover/back:translate-x-0 transition-all duration-300 ml-2 shadow-sm pointer-events-none whitespace-nowrap">
+                                    رجوع
+                                </div>
+                                <!-- Button -->
+                                <button
+                                    class="w-8 h-8 flex items-center justify-center text-slate-400 hover:text-brand-blue transition-colors rounded-full hover:bg-brand-blue/10 bg-slate-50 dark:bg-slate-800/50 shadow-sm border border-slate-200 dark:border-slate-700">
+                                    <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                                </button>
+                            </div>
+
+                            <div>
+                                <div
+                                    class="w-12 h-12 rounded-xl bg-brand-blue/10 dark:bg-brand-blue/20 text-brand-blue dark:text-brand-lightBlue flex items-center justify-center mb-6 mt-2">
+                                    <i data-lucide="activity" class="w-6 h-6"></i>
+                                </div>
+                                <h3 class="text-xl font-bold text-brand-darkNavy dark:text-white mb-3">فرط الحركة وتشتت
+                                    الانتباه</h3>
+                                <p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">تطبيق تدريبات
+                                    مخصصة لتهدئة النشاط الحركي الزائد، وزيادة مدى انتباه الطفل واستجابته للتوجيهات،
+                                    والتحكم الذاتي في السلوكيات والاندفاعية.</p>
+                            </div>
+
+                            <div class="mt-6">
+                                <button onclick="requestService('adhd')"
+                                    class="w-full flex items-center justify-center gap-2 py-3 rounded-xl bg-gradient-to-r from-brand-blue to-brand-lightBlue text-white font-bold text-sm shadow-lg shadow-brand-blue/20 hover:shadow-xl hover:shadow-brand-blue/30 hover:-translate-y-1 transition-all duration-300">
+                                    طلب خدمة
+                                    <i data-lucide="arrow-left" class="w-4 h-4"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Success Cases -->
+    <section id="success-cases" class="py-20 lg:py-28 bg-white dark:bg-brand-deepNavy transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <!-- Section Header -->
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span
+                    class="text-xs font-semibold uppercase tracking-wider text-brand-blue dark:text-brand-lightBlue">نتائج
+                    واقعية ملموسة</span>
+                <h2 class="text-3xl sm:text-4xl font-bold mt-2 text-brand-darkNavy dark:text-white">قصص نجاح ملهمة</h2>
+                <p class="text-sm text-slate-400 dark:text-slate-500 mt-2">
+                    تم إخفاء الهوية الكاملة للحالات وتعديل الرموز حفاظاً على الخصوصية التامة لمرضانا وعائلاتهم.
+                </p>
+                <div class="w-16 h-1 bg-brand-blue mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <!-- Cases Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <!-- Case 1 -->
+                <div
+                    class="p-6 sm:p-8 rounded-2xl bg-brand-gray dark:bg-gradient-to-br dark:from-brand-cardNavy1 dark:to-brand-cardNavy2 border border-slate-100 dark:border-white/5 dark:shadow-xl dark:shadow-[#040b17]/60 dark:backdrop-blur-md hover:shadow-md transition-shadow duration-300">
+                    <div class="flex items-center justify-between mb-6">
+                        <span
+                            class="px-3 py-1 rounded-full text-xs font-medium bg-brand-blue/10 text-brand-blue dark:bg-brand-blue/20 dark:text-brand-lightBlue font-outfit">
+                            عمر الحالة: 6 سنوات
+                        </span>
+                        <div class="text-brand-blue dark:text-brand-lightBlue">
+                            <i data-lucide="quote" class="w-6 h-6 opacity-40"></i>
+                        </div>
+                    </div>
+
+                    <h3 class="text-lg font-bold text-brand-darkNavy dark:text-white mb-2">تخطي تأخر النطق ولثغات الحروف
+                    </h3>
+                    <div class="w-full rounded-xl overflow-hidden mb-4">
+                        <img src="1.jpg" alt="تخطي تأخر النطق ولثغات الحروف" class="w-full h-auto block" loading="lazy">
+                    </div>
+                    <div class="space-y-4">
+                        <div>
+                            <span class="block text-xs font-semibold text-slate-400 dark:text-slate-500">حالة
+                                البداية:</span>
+                            <p class="text-sm text-slate-600 dark:text-slate-300 mt-1">
+                                ضعف مخارج الحروف، تأخر لغوي كبير وصعوبة صياغة جملة مفيدة مما سبب للطفل إحباطاً وعزلة عن
+                                أقرانه.
+                            </p>
+                        </div>
+                        <div class="border-t border-slate-200/50 dark:border-brand-darkNavy/50 pt-4">
+                            <span class="block text-xs font-semibold text-brand-emerald">خطة التأهيل والنتيجة:</span>
+                            <p class="text-sm text-slate-600 dark:text-slate-300 mt-1">
+                                استغرق التأهيل 4 أشهر بمعدل جلستين أسبوعياً، شملت تدريب أعضاء النطق والألعاب اللغوية.
+                                الطفل الآن يتكلم بطلاقة تامة ويصيغ جملاً صحيحة.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Case 2 -->
+                <div
+                    class="p-6 sm:p-8 rounded-2xl bg-brand-gray dark:bg-gradient-to-br dark:from-brand-cardNavy1 dark:to-brand-cardNavy2 border border-slate-100 dark:border-white/5 dark:shadow-xl dark:shadow-[#040b17]/60 dark:backdrop-blur-md hover:shadow-md transition-shadow duration-300">
+                    <div class="flex items-center justify-between mb-6">
+                        <span
+                            class="px-3 py-1 rounded-full text-xs font-medium bg-brand-blue/10 text-brand-blue dark:bg-brand-blue/20 dark:text-brand-lightBlue font-outfit">
+                            عمر الحالة: 8 سنوات
+                        </span>
+                        <div class="text-brand-blue dark:text-brand-lightBlue">
+                            <i data-lucide="quote" class="w-6 h-6 opacity-40"></i>
+                        </div>
+                    </div>
+
+                    <h3 class="text-lg font-bold text-brand-darkNavy dark:text-white mb-2">التركيز والتميز الدراسي مع
+                        ADHD</h3>
+                    <div class="w-full rounded-xl overflow-hidden mb-4">
+                        <img src="2.jpg" alt="التركيز والتميز الدراسي مع ADHD" class="w-full h-auto block"
+                            loading="lazy">
+                    </div>
+                    <div class="space-y-4">
+                        <div>
+                            <span class="block text-xs font-semibold text-slate-400 dark:text-slate-500">حالة
+                                البداية:</span>
+                            <p class="text-sm text-slate-600 dark:text-slate-300 mt-1">
+                                فرط حركة وتشتت انتباه مع تراجع أكاديمي وصعوبة الجلوس لأداء الواجب المدرسي لأكثر من 5
+                                دقائق.
+                            </p>
+                        </div>
+                        <div class="border-t border-slate-200/50 dark:border-brand-darkNavy/50 pt-4">
+                            <span class="block text-xs font-semibold text-brand-emerald">خطة التأهيل والنتيجة:</span>
+                            <p class="text-sm text-slate-600 dark:text-slate-300 mt-1">
+                                خطة دمجت تعديل السلوك وتنمية المهارات الإدراكية مع إرشاد الأسرة. تحسن مدى انتباه الطفلة
+                                بنسبة كبيرة وتميزت أكاديمياً هذا العام.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Case 3 -->
+                <div
+                    class="p-6 sm:p-8 rounded-2xl bg-brand-gray dark:bg-gradient-to-br dark:from-brand-cardNavy1 dark:to-brand-cardNavy2 border border-slate-100 dark:border-white/5 dark:shadow-xl dark:shadow-[#040b17]/60 dark:backdrop-blur-md hover:shadow-md transition-shadow duration-300">
+                    <div class="flex items-center justify-between mb-6">
+                        <span
+                            class="px-3 py-1 rounded-full text-xs font-medium bg-brand-blue/10 text-brand-blue dark:bg-brand-blue/20 dark:text-brand-lightBlue font-outfit">
+                            عمر الحالة: 5 سنوات
+                        </span>
+                        <div class="text-brand-blue dark:text-brand-lightBlue">
+                            <i data-lucide="quote" class="w-6 h-6 opacity-40"></i>
+                        </div>
+                    </div>
+
+                    <h3 class="text-lg font-bold text-brand-darkNavy dark:text-white mb-2">التواصل والدمج لأطفال طيف
+                        التوحد</h3>
+                    <div class="w-full rounded-xl overflow-hidden mb-4">
+                        <img src="3.jpg" alt="التواصل والدمج لأطفال طيف التوحد" class="w-full h-auto block"
+                            loading="lazy">
+                    </div>
+                    <div class="space-y-4">
+                        <div>
+                            <span class="block text-xs font-semibold text-slate-400 dark:text-slate-500">حالة
+                                البداية:</span>
+                            <p class="text-sm text-slate-600 dark:text-slate-300 mt-1">
+                                ضعف تواصل بصري، تكرار كلام (إيكولاليا) ورفض كامل للعب مع الأطفال الآخرين مع نوبات غضب
+                                متكررة.
+                            </p>
+                        </div>
+                        <div class="border-t border-slate-200/50 dark:border-brand-darkNavy/50 pt-4">
+                            <span class="block text-xs font-semibold text-brand-emerald">خطة التأهيل والنتيجة:</span>
+                            <p class="text-sm text-slate-600 dark:text-slate-300 mt-1">
+                                برنامج تدريب مهارات التواصل الاجتماعي غير اللفظي وزيادة التركيز البصري. يستجيب الطفل
+                                الآن لنداء اسمه ويتواصل بالعين ويلعب مع إخوته.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 lg:py-28 bg-brand-gray dark:bg-brand-deepNavy transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+
+                <!-- Info Column -->
+                <div class="lg:col-span-5 space-y-6">
+                    <span
+                        class="text-xs font-semibold uppercase tracking-wider text-brand-blue dark:text-brand-lightBlue">الكفاءة
+                        المهنية</span>
+                    <h2 class="text-3xl sm:text-4xl font-bold text-brand-darkNavy dark:text-white">المهارات والقدرات
+                        المهنية</h2>
+                    <p class="text-slate-600 dark:text-slate-300 leading-relaxed">
+                        نحرص على التطوير العلمي المستمر والتدرب على أحدث البرامج العلاجية العالمية مثل برنامج (PECS)
+                        للتواصل وبرنامج (TEACCH) وتكامل الحواس وتعديل السلوك الإيجابي لتوفير أفضل مستوى علاجي ممكن
+                        للأطفال.
+                    </p>
+                    <div
+                        class="p-5 rounded-2xl bg-white dark:bg-gradient-to-br dark:from-brand-cardNavy1 dark:to-brand-cardNavy2 border border-slate-100 dark:border-white/5 dark:shadow-xl dark:shadow-[#040b17]/60 dark:backdrop-blur-md flex items-center space-x-4 space-x-reverse">
+                        <div class="p-3 bg-brand-emerald/10 dark:bg-brand-emerald/20 text-brand-emerald rounded-xl">
+                            <i data-lucide="check-circle" class="w-6 h-6"></i>
+                        </div>
+                        <div>
+                            <span class="block text-sm font-bold text-brand-darkNavy dark:text-white">منهجية علمية
+                                100%</span>
+                            <span class="text-xs text-slate-500 dark:text-slate-400">تقييمات دورية واختبارات معيارية
+                                لقياس تحسن الطفل.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Progress bars Column -->
+                <div
+                    class="lg:col-span-7 space-y-6 bg-white dark:bg-brand-deepNavy p-8 rounded-2xl border border-slate-100 dark:border-brand-darkNavy shadow-sm">
+
+                    <!-- Skill 1 -->
+                    <div>
+                        <div class="flex justify-between text-sm font-bold mb-2">
+                            <span class="text-slate-700 dark:text-slate-200">التخاطب واضطرابات النطق والكلام</span>
+                            <span class="text-brand-blue dark:text-brand-lightBlue font-outfit">95%</span>
+                        </div>
+                        <div class="w-full bg-slate-100 dark:bg-brand-deepNavy h-3 rounded-full overflow-hidden">
+                            <div class="bg-brand-blue h-full rounded-full transition-all duration-1000 ease-out"
+                                style="width: 95%"></div>
+                        </div>
+                    </div>
+
+                    <!-- Skill 2 -->
+                    <div>
+                        <div class="flex justify-between text-sm font-bold mb-2">
+                            <span class="text-slate-700 dark:text-slate-200">تعديل سلوك الأطفال والمراهقين</span>
+                            <span class="text-brand-blue dark:text-brand-lightBlue font-outfit">90%</span>
+                        </div>
+                        <div class="w-full bg-slate-100 dark:bg-brand-deepNavy h-3 rounded-full overflow-hidden">
+                            <div class="bg-brand-blue h-full rounded-full transition-all duration-1000 ease-out"
+                                style="width: 90%"></div>
+                        </div>
+                    </div>
+
+                    <!-- Skill 3 -->
+                    <div>
+                        <div class="flex justify-between text-sm font-bold mb-2">
+                            <span class="text-slate-700 dark:text-slate-200">تأهيل أطفال طيف التوحد (Autism
+                                Spectrum)</span>
+                            <span class="text-brand-blue dark:text-brand-lightBlue font-outfit">92%</span>
+                        </div>
+                        <div class="w-full bg-slate-100 dark:bg-brand-deepNavy h-3 rounded-full overflow-hidden">
+                            <div class="bg-brand-blue h-full rounded-full transition-all duration-1000 ease-out"
+                                style="width: 92%"></div>
+                        </div>
+                    </div>
+
+                    <!-- Skill 4 -->
+                    <div>
+                        <div class="flex justify-between text-sm font-bold mb-2">
+                            <span class="text-slate-700 dark:text-slate-200">علاج صعوبات التعلم الأكاديمية
+                                والنمائية</span>
+                            <span class="text-brand-blue dark:text-brand-lightBlue font-outfit">88%</span>
+                        </div>
+                        <div class="w-full bg-slate-100 dark:bg-brand-deepNavy h-3 rounded-full overflow-hidden">
+                            <div class="bg-brand-blue h-full rounded-full transition-all duration-1000 ease-out"
+                                style="width: 88%"></div>
+                        </div>
+                    </div>
+
+                    <!-- Skill 5 -->
+                    <div>
+                        <div class="flex justify-between text-sm font-bold mb-2">
+                            <span class="text-slate-700 dark:text-slate-200">فرط الحركة وتشتت الانتباه (ADHD)</span>
+                            <span class="text-brand-blue dark:text-brand-lightBlue font-outfit">90%</span>
+                        </div>
+                        <div class="w-full bg-slate-100 dark:bg-brand-deepNavy h-3 rounded-full overflow-hidden">
+                            <div class="bg-brand-blue h-full rounded-full transition-all duration-1000 ease-out"
+                                style="width: 90%"></div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Certificates Section -->
+    <section id="certificates" class="py-20 lg:py-28 bg-white dark:bg-brand-deepNavy transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <!-- Section Header -->
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span
+                    class="text-xs font-semibold uppercase tracking-wider text-brand-blue dark:text-brand-lightBlue">الاعتماد
+                    والتأهيل العلمي</span>
+                <h2 class="text-3xl sm:text-4xl font-bold mt-2 text-brand-darkNavy dark:text-white">الشهادات والاعتمادات
+                    المهنية</h2>
+                <div class="w-16 h-1 bg-brand-blue mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <!-- Premium Grid Layout -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto mt-16 px-4 sm:px-0">
+
+                <!-- Card 1 -->
+                <div
+                    class="glowing-certificate-card p-8 flex flex-col justify-between h-full group transition-all duration-300">
+                    <div>
+                        <div class="flex justify-between items-center mb-6">
+                            <span
+                                class="inline-flex items-center justify-center px-4 py-1.5 rounded-xl text-sm font-bold bg-brand-blue/10 text-brand-blue dark:bg-brand-blue/20 dark:text-brand-lightBlue font-outfit shadow-sm">
+                                2020
+                            </span>
+                            <div
+                                class="w-12 h-12 rounded-xl bg-brand-blue/10 text-brand-blue dark:bg-brand-lightBlue/10 dark:text-brand-lightBlue flex items-center justify-center shadow-sm transform group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
+                                <i data-lucide="graduation-cap" class="w-6 h-6"></i>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-bold text-brand-darkNavy dark:text-white mb-3 leading-snug">
+                            بداية الدراسة الجامعية
+                        </h3>
+                        <p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed font-medium">
+                            كلية التربية الخاصة – جامعة الأزهر الشريف.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div
+                    class="glowing-certificate-card p-8 flex flex-col justify-between h-full group transition-all duration-300">
+                    <div>
+                        <div class="flex justify-between items-center mb-6">
+                            <span
+                                class="inline-flex items-center justify-center px-4 py-1.5 rounded-xl text-sm font-bold bg-brand-blue/10 text-brand-blue dark:bg-brand-blue/20 dark:text-brand-lightBlue font-outfit shadow-sm">
+                                2022
+                            </span>
+                            <div
+                                class="w-12 h-12 rounded-xl bg-brand-blue/10 text-brand-blue dark:bg-brand-lightBlue/10 dark:text-brand-lightBlue flex items-center justify-center shadow-sm transform group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
+                                <i data-lucide="award" class="w-6 h-6"></i>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-bold text-brand-darkNavy dark:text-white mb-3 leading-snug">
+                            البورد الدولي للتأهيل والتدريب والبحث العلمي
+                        </h3>
+                        <p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed font-medium">
+                            برامج تدريبية متقدمة في أساليب التأهيل الحديثة.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div
+                    class="glowing-certificate-card p-8 flex flex-col justify-between h-full group transition-all duration-300">
+                    <div>
+                        <div class="flex justify-between items-center mb-6">
+                            <span
+                                class="inline-flex items-center justify-center px-4 py-1.5 rounded-xl text-sm font-bold bg-brand-blue/10 text-brand-blue dark:bg-brand-blue/20 dark:text-brand-lightBlue font-outfit shadow-sm">
+                                2023
+                            </span>
+                            <div
+                                class="w-12 h-12 rounded-xl bg-brand-blue/10 text-brand-blue dark:bg-brand-lightBlue/10 dark:text-brand-lightBlue flex items-center justify-center shadow-sm transform group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
+                                <i data-lucide="heart-handshake" class="w-6 h-6"></i>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-bold text-brand-darkNavy dark:text-white mb-3 leading-snug">
+                            مركز بداية — تدريب ميداني
+                        </h3>
+                        <p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed font-medium">
+                            خبرة عملية مكثفة مع حالات متنوعة.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div
+                    class="glowing-certificate-card p-8 flex flex-col justify-between h-full group transition-all duration-300">
+                    <div>
+                        <div class="flex justify-between items-center mb-6">
+                            <span
+                                class="inline-flex items-center justify-center px-4 py-1.5 rounded-xl text-sm font-bold bg-brand-blue/10 text-brand-blue dark:bg-brand-blue/20 dark:text-brand-lightBlue font-outfit shadow-sm">
+                                2023
+                            </span>
+                            <div
+                                class="w-12 h-12 rounded-xl bg-brand-blue/10 text-brand-blue dark:bg-brand-lightBlue/10 dark:text-brand-lightBlue flex items-center justify-center shadow-sm transform group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
+                                <i data-lucide="message-square" class="w-6 h-6"></i>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-bold text-brand-darkNavy dark:text-white mb-3 leading-snug">
+                            التخاطب واضطرابات النطق
+                        </h3>
+                        <p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed font-medium">
+                            دورات متخصصة في تأسيس وعلاج النطق واللغة.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Card 5 -->
+                <div
+                    class="glowing-certificate-card p-8 flex flex-col justify-between h-full group transition-all duration-300">
+                    <div>
+                        <div class="flex justify-between items-center mb-6">
+                            <span
+                                class="inline-flex items-center justify-center px-4 py-1.5 rounded-xl text-sm font-bold bg-brand-blue/10 text-brand-blue dark:bg-brand-blue/20 dark:text-brand-lightBlue font-outfit shadow-sm">
+                                2024
+                            </span>
+                            <div
+                                class="w-12 h-12 rounded-xl bg-brand-blue/10 text-brand-blue dark:bg-brand-lightBlue/10 dark:text-brand-lightBlue flex items-center justify-center shadow-sm transform group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
+                                <i data-lucide="brain" class="w-6 h-6"></i>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-bold text-brand-darkNavy dark:text-white mb-3 leading-snug">
+                            العلاج المعرفي السلوكي (CBT)
+                        </h3>
+                        <p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed font-medium">
+                            تطبيق مبادئ السلوك المعرفي مع الأطفال.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Card 6 -->
+                <div
+                    class="glowing-certificate-card p-8 flex flex-col justify-between h-full group transition-all duration-300">
+                    <div>
+                        <div class="flex justify-between items-center mb-6">
+                            <span
+                                class="inline-flex items-center justify-center px-4 py-1.5 rounded-xl text-sm font-bold bg-brand-blue/10 text-brand-blue dark:bg-brand-blue/20 dark:text-brand-lightBlue font-outfit shadow-sm">
+                                2024
+                            </span>
+                            <div
+                                class="w-12 h-12 rounded-xl bg-brand-blue/10 text-brand-blue dark:bg-brand-lightBlue/10 dark:text-brand-lightBlue flex items-center justify-center shadow-sm transform group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
+                                <i data-lucide="puzzle" class="w-6 h-6"></i>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-bold text-brand-darkNavy dark:text-white mb-3 leading-snug">
+                            اضطراب طيف التوحد + التأهيل النفسي الحركي
+                        </h3>
+                        <p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed font-medium">
+                            برامج تأهيل شاملة معتمدة.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Card 7 -->
+                <div
+                    class="glowing-certificate-card p-8 flex flex-col justify-between h-full group transition-all duration-300 md:col-span-2 lg:col-span-1">
+                    <div>
+                        <div class="flex justify-between items-center mb-6">
+                            <span
+                                class="inline-flex items-center justify-center px-4 py-1.5 rounded-xl text-sm font-bold bg-brand-blue/10 text-brand-blue dark:bg-brand-blue/20 dark:text-brand-lightBlue font-outfit shadow-sm">
+                                2025
+                            </span>
+                            <div
+                                class="w-12 h-12 rounded-xl bg-brand-blue/10 text-brand-blue dark:bg-brand-lightBlue/10 dark:text-brand-lightBlue flex items-center justify-center shadow-sm transform group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
+                                <i data-lucide="badge-check" class="w-6 h-6"></i>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-bold text-brand-darkNavy dark:text-white mb-3 leading-snug">
+                            التخرج وبدء الممارسة المتقدمة
+                        </h3>
+                        <p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed font-medium">
+                            إطلاق خدمات متكاملة وخطط فردية للحالات.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Awareness Content Section -->
+    <section id="awareness" class="py-20 lg:py-28 bg-brand-gray dark:bg-brand-deepNavy transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <!-- Section Header -->
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span
+                    class="text-xs font-semibold uppercase tracking-wider text-brand-blue dark:text-brand-lightBlue">محتوى
+                    توعوي</span>
+                <h2 class="text-3xl sm:text-4xl font-bold mt-2 text-brand-darkNavy dark:text-white">مقالات تثقيفية للأسر
+                </h2>
+                <p class="text-slate-600 dark:text-slate-300 mt-3 max-w-2xl mx-auto leading-relaxed">
+                    معلومات موثوقة بأسلوب بسيط، تساعدك على فهم طفلك ودعمه بثقة.
+                </p>
+                <div class="w-16 h-1 bg-brand-blue mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <!-- Articles Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <!-- Article 1 -->
+                <div
+                    class="bg-white dark:bg-gradient-to-br dark:from-brand-cardNavy1 dark:to-brand-cardNavy2 border border-slate-100 dark:border-white/5 dark:shadow-xl dark:shadow-[#040b17]/60 dark:backdrop-blur-md p-8 rounded-2xl shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="flex items-center justify-between mb-6">
+                            <span
+                                class="px-3 py-1 rounded-full text-xs font-semibold bg-brand-blue/10 text-brand-blue dark:bg-brand-blue/20 dark:text-brand-lightBlue">
+                                التخاطب وعلاج النطق
+                            </span>
+                            <span class="text-xs text-slate-400 dark:text-slate-500 flex items-center">
+                                <i data-lucide="clock" class="w-3.5 h-3.5 ml-1"></i>
+                                قراءة: 5 دقائق
+                            </span>
+                        </div>
+                        <h3
+                            class="text-xl font-bold text-brand-darkNavy dark:text-white mb-4 group-hover:text-brand-blue transition-colors duration-200 leading-snug">
+                            كيف تكتشف تأخر الكلام عند طفلك في سن مبكرة؟
+                        </h3>
+                        <p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed mb-6">
+                            علامات ومؤشرات واضحة تدل على حاجة طفلك لاستشارة أخصائي تخاطب، مع تقديم مجموعة من الطرق
+                            العملية والتمارين البسيطة لتحفيز نمو اللغة والكلام في المنزل.
+                        </p>
+                    </div>
+                    <a href="#contact"
+                        class="inline-flex items-center text-xs font-bold text-brand-blue dark:text-brand-lightBlue hover:underline group/btn">
+                        اقرأ المقال بالكامل
+                        <i data-lucide="arrow-left"
+                            class="w-3.5 h-3.5 mr-1 group-hover/btn:-translate-x-1 transition-transform duration-200"></i>
+                    </a>
+                </div>
+
+                <!-- Article 2 -->
+                <div
+                    class="bg-white dark:bg-gradient-to-br dark:from-brand-cardNavy1 dark:to-brand-cardNavy2 border border-slate-100 dark:border-white/5 dark:shadow-xl dark:shadow-[#040b17]/60 dark:backdrop-blur-md p-8 rounded-2xl shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="flex items-center justify-between mb-6">
+                            <span
+                                class="px-3 py-1 rounded-full text-xs font-semibold bg-brand-blue/10 text-brand-blue dark:bg-brand-blue/20 dark:text-brand-lightBlue">
+                                تعديل السلوك
+                            </span>
+                            <span class="text-xs text-slate-400 dark:text-slate-500 flex items-center">
+                                <i data-lucide="clock" class="w-3.5 h-3.5 ml-1"></i>
+                                قراءة: 6 دقائق
+                            </span>
+                        </div>
+                        <h3
+                            class="text-xl font-bold text-brand-darkNavy dark:text-white mb-4 group-hover:text-brand-blue transition-colors duration-200 leading-snug">
+                            خطوات عمليّة للتعامل مع نوبات الغضب والعناد
+                        </h3>
+                        <p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed mb-6">
+                            دليلك المتكامل لفهم أسباب نوبات الغضب المفاجئة عند الأطفال، وكيفية توجيه وتعديل سلوك طفلك
+                            بشكل إيجابي وهادئ لبناء علاقة قائمة على التفاهم المتبادل.
+                        </p>
+                    </div>
+                    <a href="#contact"
+                        class="inline-flex items-center text-xs font-bold text-brand-blue dark:text-brand-lightBlue hover:underline group/btn">
+                        اقرأ المقال بالكامل
+                        <i data-lucide="arrow-left"
+                            class="w-3.5 h-3.5 mr-1 group-hover/btn:-translate-x-1 transition-transform duration-200"></i>
+                    </a>
+                </div>
+
+                <!-- Article 3 -->
+                <div
+                    class="bg-white dark:bg-gradient-to-br dark:from-brand-cardNavy1 dark:to-brand-cardNavy2 border border-slate-100 dark:border-white/5 dark:shadow-xl dark:shadow-[#040b17]/60 dark:backdrop-blur-md p-8 rounded-2xl shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="flex items-center justify-between mb-6">
+                            <span
+                                class="px-3 py-1 rounded-full text-xs font-semibold bg-brand-blue/10 text-brand-blue dark:bg-brand-blue/20 dark:text-brand-lightBlue">
+                                صعوبات التعلم وADHD
+                            </span>
+                            <span class="text-xs text-slate-400 dark:text-slate-500 flex items-center">
+                                <i data-lucide="clock" class="w-3.5 h-3.5 ml-1"></i>
+                                قراءة: 4 دقائق
+                            </span>
+                        </div>
+                        <h3
+                            class="text-xl font-bold text-brand-darkNavy dark:text-white mb-4 group-hover:text-brand-blue transition-colors duration-200 leading-snug">
+                            أهمية التدخل المبكر لأطفال فرط الحركة وتشتت الانتباه
+                        </h3>
+                        <p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed mb-6">
+                            كيف يساعد الكشف المبكر والبرامج العلاجية المخصصة في تحسين التحصيل الأكاديمي والمهارات
+                            الاجتماعية والتحكم بالاندفاعية لدى الأطفال بشكل كبير.
+                        </p>
+                    </div>
+                    <a href="#contact"
+                        class="inline-flex items-center text-xs font-bold text-brand-blue dark:text-brand-lightBlue hover:underline group/btn">
+                        اقرأ المقال بالكامل
+                        <i data-lucide="arrow-left"
+                            class="w-3.5 h-3.5 mr-1 group-hover/btn:-translate-x-1 transition-transform duration-200"></i>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 lg:py-28 bg-white dark:bg-brand-deepNavy transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <!-- Section Header -->
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span
+                    class="text-xs font-semibold uppercase tracking-wider text-brand-blue dark:text-brand-lightBlue">تواصل
+                    معنا الآن</span>
+                <h2 class="text-3xl sm:text-4xl font-bold mt-2 text-brand-darkNavy dark:text-white">حجز استشارة أو
+                    استفسار</h2>
+                <div class="w-16 h-1 bg-brand-blue mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <!-- Contact Grid -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+
+                <!-- Contact info details (5 cols) -->
+                <div class="lg:col-span-5 space-y-6">
+                    <h3 class="text-2xl font-bold text-brand-darkNavy dark:text-white">تفاصيل الاتصال</h3>
+                    <p class="text-slate-600 dark:text-slate-300 leading-relaxed mb-6">
+                        نحن نسعد بالإجابة على استفساراتكم بخصوص البرامج التأهيلية. تواصلوا معنا مباشرة أو قوموا بملء
+                        النموذج وسيقوم المساعد الطبي بالتواصل معكم لتأكيد الموعد.
+                    </p>
+
+                    <div class="space-y-4">
+
+                        <!-- Address -->
+                        <div
+                            class="flex items-start space-x-4 space-x-reverse p-4 bg-white dark:bg-gradient-to-br dark:from-brand-cardNavy1 dark:to-brand-cardNavy2 border border-slate-100 dark:border-white/5 dark:shadow-xl dark:shadow-[#040b17]/60 dark:backdrop-blur-md rounded-2xl">
+                            <div
+                                class="p-3 bg-brand-blue/10 dark:bg-brand-blue/20 text-brand-blue dark:text-brand-lightBlue rounded-xl">
+                                <i data-lucide="map-pin" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <span class="block text-xs text-slate-400 dark:text-slate-500">العنوان</span>
+                                <span class="text-sm font-bold text-slate-700 dark:text-slate-200">المنصورة، محافظة
+                                    الدقهلية، مصر</span>
+                            </div>
+                        </div>
+
+                        <!-- Phone -->
+                        <div
+                            class="flex items-start space-x-4 space-x-reverse p-4 bg-white dark:bg-gradient-to-br dark:from-brand-cardNavy1 dark:to-brand-cardNavy2 border border-slate-100 dark:border-white/5 dark:shadow-xl dark:shadow-[#040b17]/60 dark:backdrop-blur-md rounded-2xl">
+                            <div
+                                class="p-3 bg-brand-blue/10 dark:bg-brand-blue/20 text-brand-blue dark:text-brand-lightBlue rounded-xl">
+                                <i data-lucide="phone" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <span class="block text-xs text-slate-400 dark:text-slate-500">الهاتف والواتساب</span>
+                                <a href="https://wa.me/201095100240" target="_blank" rel="noopener noreferrer"
+                                    class="text-sm font-bold text-slate-700 dark:text-slate-200 hover:text-brand-blue transition-colors font-outfit inline-block dir-ltr">
+                                    +20 109 510 0240
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Email -->
+                        <div
+                            class="flex items-start space-x-4 space-x-reverse p-4 bg-white dark:bg-gradient-to-br dark:from-brand-cardNavy1 dark:to-brand-cardNavy2 border border-slate-100 dark:border-white/5 dark:shadow-xl dark:shadow-[#040b17]/60 dark:backdrop-blur-md rounded-2xl">
+                            <div
+                                class="p-3 bg-brand-blue/10 dark:bg-brand-blue/20 text-brand-blue dark:text-brand-lightBlue rounded-xl">
+                                <i data-lucide="mail" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <span class="block text-xs text-slate-400 dark:text-slate-500">البريد الإلكتروني</span>
+                                <a href="mailto:abowaheed975@gmail.com"
+                                    class="text-sm font-bold text-slate-700 dark:text-slate-200 hover:text-brand-blue transition-colors font-outfit inline-block">
+                                    abowaheed975@gmail.com
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact form container (7 cols) -->
+                <div
+                    class="lg:col-span-7 bg-white dark:bg-brand-deepNavy p-8 sm:p-10 rounded-3xl border border-slate-100 dark:border-brand-darkNavy shadow-sm">
+                    <form id="consultation-form" class="space-y-6">
+
+                        <!-- Alert message Container (Hidden by default) -->
+                        <div id="form-alert"
+                            class="hidden p-4 rounded-xl border flex items-start space-x-3 space-x-reverse transition-all duration-300">
+                            <!-- Icon and Text filled by JS -->
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <!-- Name -->
+                            <div>
+                                <label for="name"
+                                    class="block text-xs font-bold text-slate-500 dark:text-slate-400 mb-2">اسم ولي
+                                    الأمر / العميل *</label>
+                                <input type="text" id="name" required
+                                    class="w-full px-4 py-3 rounded-xl border border-slate-200 dark:border-brand-darkNavy bg-slate-50 dark:bg-brand-deepNavy text-slate-800 dark:text-slate-100 focus:outline-none focus:border-brand-blue focus:bg-white dark:focus:bg-slate-950 transition-colors duration-200 text-sm">
+                            </div>
+                            <!-- Phone -->
+                            <div>
+                                <label for="phone"
+                                    class="block text-xs font-bold text-slate-500 dark:text-slate-400 mb-2">رقم الهاتف
+                                    *</label>
+                                <input type="tel" id="phone" required
+                                    class="w-full px-4 py-3 rounded-xl border border-slate-200 dark:border-brand-darkNavy bg-slate-50 dark:bg-brand-deepNavy text-slate-800 dark:text-slate-100 focus:outline-none focus:border-brand-blue focus:bg-white dark:focus:bg-slate-950 transition-colors duration-200 text-sm">
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <!-- Age -->
+                            <div>
+                                <label for="age"
+                                    class="block text-xs font-bold text-slate-500 dark:text-slate-400 mb-2">عمر الطفل
+                                    (سنوات)</label>
+                                <input type="number" id="age" min="1" max="18"
+                                    class="w-full px-4 py-3 rounded-xl border border-slate-200 dark:border-brand-darkNavy bg-slate-50 dark:bg-brand-deepNavy text-slate-800 dark:text-slate-100 focus:outline-none focus:border-brand-blue focus:bg-white dark:focus:bg-slate-950 transition-colors duration-200 text-sm">
+                            </div>
+                            <!-- Service Select -->
+                            <div>
+                                <label for="service"
+                                    class="block text-xs font-bold text-slate-500 dark:text-slate-400 mb-2">نوع الخدمة
+                                    المطلوبة *</label>
+                                <select id="service" required
+                                    class="w-full px-4 py-3 rounded-xl border border-slate-200 dark:border-brand-darkNavy bg-slate-50 dark:bg-brand-deepNavy text-slate-800 dark:text-slate-100 focus:outline-none focus:border-brand-blue focus:bg-white dark:focus:bg-slate-950 transition-colors duration-200 text-sm">
+                                    <option value="" disabled selected>اختر الخدمة...</option>
+                                    <option value="speech">جلسات تخاطب وعلاج نطق</option>
+                                    <option value="behavior">تعديل سلوك</option>
+                                    <option value="skills">تنمية مهارات</option>
+                                    <option value="learning">صعوبات تعلم</option>
+                                    <option value="autism">تأهيل طيف التوحد</option>
+                                    <option value="adhd">فرط الحركة وتشتت الانتباه</option>
+                                    <option value="other">أخرى / استشارة عامة</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Message -->
+                        <div>
+                            <label for="message"
+                                class="block text-xs font-bold text-slate-500 dark:text-slate-400 mb-2">اشرح لنا حالة
+                                الطفل بإيجاز *</label>
+                            <textarea id="message" rows="4" required
+                                class="w-full px-4 py-3 rounded-xl border border-slate-200 dark:border-brand-darkNavy bg-slate-50 dark:bg-brand-deepNavy text-slate-800 dark:text-slate-100 focus:outline-none focus:border-brand-blue focus:bg-white dark:focus:bg-slate-950 transition-colors duration-200 text-sm"></textarea>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <button type="submit"
+                            class="w-full inline-flex items-center justify-center px-8 py-4 rounded-xl text-base font-semibold bg-brand-blue hover:bg-brand-blue/90 text-white shadow-lg shadow-brand-blue/25 dark:shadow-[0_0_15px_rgba(58,134,200,0.4)] hover:shadow-xl transition-all duration-200">
+                            <i data-lucide="send" class="w-5 h-5 ml-2"></i>
+                            إرسال طلب الاستشارة
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer class="relative text-slate-400 py-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
+        <!-- 3D Cinematic Glow & Light Background Layers -->
+        <!-- Spotlight behind content -->
+        <div
+            class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-gradient-to-r from-[#00C2FF]/10 to-blue-500/10 blur-[130px] pointer-events-none z-0 animate-pulse-glow">
+        </div>
+
+        <!-- Soft Cyan Floating Ambient Particles (Replace cartoons completely with luxury futuristic visual style) -->
+        <div
+            class="absolute top-[10%] left-[8%] w-24 h-24 rounded-full bg-[#00C2FF]/5 blur-2xl animate-float-slow pointer-events-none z-0">
+        </div>
+        <div
+            class="absolute bottom-[15%] right-[10%] w-32 h-32 rounded-full bg-blue-500/5 blur-3xl animate-float-slower pointer-events-none z-0">
+        </div>
+
+        <!-- Subtle Neon Dots/Stars -->
+        <div
+            class="absolute top-[25%] right-[20%] w-2.5 h-2.5 rounded-full bg-[#00C2FF] shadow-[0_0_12px_#00C2FF] animate-pulse pointer-events-none z-0">
+        </div>
+        <div class="absolute bottom-[35%] left-[22%] w-1.5 h-1.5 rounded-full bg-blue-400 shadow-[0_0_8px_#3a86c8] animate-pulse pointer-events-none z-0"
+            style="animation-delay: 2s;"></div>
+        <div class="absolute top-[65%] left-[15%] w-2 h-2 rounded-full bg-[#00C2FF] shadow-[0_0_10px_#00C2FF] animate-pulse pointer-events-none z-0"
+            style="animation-delay: 1s;"></div>
+
+
+            <!-- Main Frosted Glass Card Wrapper (Layered Depth) -->
+            <div
+                class="futurism-glass rounded-3xl p-8 sm:p-12 md:p-16 text-center space-y-10 transition-transform duration-500 hover:scale-[1.005] hover:shadow-[0_40px_80px_-20px_rgba(0,194,255,0.08)]">
+
+                <!-- Medical/Futuristic 3D Floating Crest/Accent -->
+                <div class="flex justify-center mb-2">
+                    <div
+                        class="w-16 h-16 rounded-2xl bg-gradient-to-tr from-[#00C2FF]/10 to-[#3a86c8]/20 border border-white/[0.08] backdrop-blur-md flex items-center justify-center shadow-[0_8px_32px_rgba(0,194,255,0.1)] hover:rotate-12 hover:scale-110 transition-all duration-300 relative group cursor-pointer">
+                        <div
+                            class="absolute inset-0 rounded-2xl bg-gradient-to-tr from-[#00C2FF]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-sm">
+                        </div>
+                        <!-- A medical/speech therapy-inspired abstract 3D icon -->
+                        <svg class="w-8 h-8 text-[#00C2FF] drop-shadow-[0_0_8px_rgba(0,194,255,0.6)]"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z" />
+                            <path d="M19 10v1a7 7 0 0 1-14 0v-1" />
+                            <line x1="12" x2="12" y1="19" y2="22" />
+                        </svg>
+                    </div>
+                </div>
+
+                <!-- Specialist Identity -->
+                <div class="space-y-4">
+                    <h2
+                        class="text-4xl sm:text-5xl font-black bg-gradient-to-r from-white via-cyan-100 to-blue-200 bg-clip-text text-transparent tracking-wide drop-shadow-[0_2px_10px_rgba(0,194,255,0.25)] select-none">
+                        أ. محمد وحيد
+                    </h2>
+                    <p class="text-base sm:text-lg text-cyan-400 font-semibold tracking-wide max-w-xl mx-auto">
+                        أخصائي معتمد في التربية الخاصة وتعديل السلوك وعلاج عيوب النطق والكلام
+                    </p>
+                    <p class="text-xs sm:text-sm text-slate-400 max-w-2xl mx-auto leading-relaxed font-light">
+                        نلتزم بأعلى معايير الرعاية المهنية والسرية التامة لمساعدة أطفالكم على التغلب على صعوبات النطق
+                        وتنمية مهاراتهم السلوكية والاجتماعية بأحدث الطرق العلمية المتطورة.
+                    </p>
+                </div>
+
+                <!-- Futuristic Glowing Divider 1 -->
+                <div class="h-[1px] w-full bg-gradient-to-r from-transparent via-cyan-500/30 to-transparent relative">
+                    <div
+                        class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-2 h-2 rounded-full bg-[#00C2FF] shadow-[0_0_10px_#00C2FF] animate-pulse">
+                    </div>
+                </div>
+
+                <!-- Navigation Links with Underline Glow -->
+                <div class="flex flex-wrap justify-center gap-x-8 gap-y-4 text-sm font-medium">
+                    <a href="#hero"
+                        class="relative py-1 text-slate-400 hover:text-white transition-colors duration-300 group">
+                        الرئيسية
+                        <span
+                            class="absolute bottom-0 right-0 w-0 h-[2px] bg-[#00C2FF] transition-all duration-300 group-hover:w-full shadow-[0_0_8px_#00c2ff]"></span>
+                    </a>
+                    <a href="#about"
+                        class="relative py-1 text-slate-400 hover:text-white transition-colors duration-300 group">
+                        من نحن
+                        <span
+                            class="absolute bottom-0 right-0 w-0 h-[2px] bg-[#00C2FF] transition-all duration-300 group-hover:w-full shadow-[0_0_8px_#00c2ff]"></span>
+                    </a>
+                    <a href="#services"
+                        class="relative py-1 text-slate-400 hover:text-white transition-colors duration-300 group">
+                        خدماتنا
+                        <span
+                            class="absolute bottom-0 right-0 w-0 h-[2px] bg-[#00C2FF] transition-all duration-300 group-hover:w-full shadow-[0_0_8px_#00c2ff]"></span>
+                    </a>
+                    <a href="#success-cases"
+                        class="relative py-1 text-slate-400 hover:text-white transition-colors duration-300 group">
+                        قصص النجاح
+                        <span
+                            class="absolute bottom-0 right-0 w-0 h-[2px] bg-[#00C2FF] transition-all duration-300 group-hover:w-full shadow-[0_0_8px_#00c2ff]"></span>
+                    </a>
+                    <a href="#awareness"
+                        class="relative py-1 text-slate-400 hover:text-white transition-colors duration-300 group">
+                        محتوى توعوي
+                        <span
+                            class="absolute bottom-0 right-0 w-0 h-[2px] bg-[#00C2FF] transition-all duration-300 group-hover:w-full shadow-[0_0_8px_#00c2ff]"></span>
+                    </a>
+                    <a href="#contact"
+                        class="relative py-1 text-slate-400 hover:text-white transition-colors duration-300 group">
+                        اتصل بنا
+                        <span
+                            class="absolute bottom-0 right-0 w-0 h-[2px] bg-[#00C2FF] transition-all duration-300 group-hover:w-full shadow-[0_0_8px_#00c2ff]"></span>
+                    </a>
+                </div>
+
+                <!-- Futuristic Glowing Divider 2 -->
+                <div class="h-[1px] w-full bg-gradient-to-r from-transparent via-cyan-500/30 to-transparent relative">
+                    <div
+                        class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-2 h-2 rounded-full bg-[#00C2FF] shadow-[0_0_10px_#00C2FF] animate-pulse">
+                    </div>
+                </div>
+
+                <!-- Socials Section (Glass Circular Containers) -->
+                <div class="flex justify-center gap-6 text-slate-400">
+                    <!-- Facebook -->
+                    <a href="https://facebook.com" target="_blank" rel="noopener noreferrer"
+                        class="w-12 h-12 rounded-full flex items-center justify-center text-slate-300 border border-white/[0.08] bg-white/[0.03] backdrop-blur-md hover:border-[#00C2FF]/40 hover:bg-[#00C2FF]/10 hover:text-[#00C2FF] hover:shadow-[0_0_15px_rgba(0,194,255,0.3)] transition-all duration-300 hover:-translate-y-1 relative group"
+                        aria-label="Facebook">
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z" />
+                        </svg>
+                    </a>
+
+                    <!-- WhatsApp -->
+                    <a href="https://wa.me/201095100240" target="_blank" rel="noopener noreferrer"
+                        class="w-12 h-12 rounded-full flex items-center justify-center text-slate-300 border border-white/[0.08] bg-white/[0.03] backdrop-blur-md hover:border-emerald-500/40 hover:bg-emerald-500/10 hover:text-emerald-400 hover:shadow-[0_0_15px_rgba(16,185,129,0.3)] transition-all duration-300 hover:-translate-y-1 relative group"
+                        aria-label="WhatsApp">
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.513 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.457L0 24zm6.59-4.846c1.6.95 3.588 1.455 5.616 1.456h.006c5.54 0 10.05-4.512 10.054-10.058.002-2.686-1.043-5.212-2.94-7.11C17.486 1.545 14.96 1.5 12.008 1.5c-5.547 0-10.06 4.513-10.064 10.062-.001 2.032.533 4.021 1.547 5.761l-.169-.297-1.02 3.73 3.825-.992.3.178zm10.93-4.983c-.276-.138-1.636-.807-1.89-.9-.253-.093-.437-.14-.62.138-.184.277-.712.9-.872 1.084-.16.185-.32.208-.597.069-.276-.138-1.168-.43-2.223-1.374-.82-.73-1.374-1.633-1.535-1.91-.16-.277-.017-.427.121-.564.125-.124.276-.323.415-.485.138-.161.184-.277.276-.462.093-.185.047-.347-.024-.485-.07-.138-.62-1.492-.85-2.046-.224-.54-.469-.462-.62-.462-.16 0-.34-.023-.52-.023-.18 0-.477.067-.728.34-.25.27-.954.933-.954 2.277 0 1.343.977 2.64 1.115 2.825.138.185 1.92 2.93 4.654 4.11.649.28 1.157.447 1.547.572.656.21 1.25.18 1.72.11.524-.078 1.636-.67 1.868-1.316.23-.647.23-1.2.16-1.316-.07-.116-.254-.185-.53-.323z" />
+                        </svg>
+                    </a>
+
+                    <!-- LinkedIn -->
+                    <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer"
+                        class="w-12 h-12 rounded-full flex items-center justify-center text-slate-300 border border-white/[0.08] bg-white/[0.03] backdrop-blur-md hover:border-[#00C2FF]/40 hover:bg-[#00C2FF]/10 hover:text-[#00C2FF] hover:shadow-[0_0_15px_rgba(0,194,255,0.3)] transition-all duration-300 hover:-translate-y-1 relative group"
+                        aria-label="LinkedIn">
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M19 19h-3v-4.75c0-1.13-.03-2.58-1.57-2.58-1.57 0-1.81 1.23-1.81 2.5V19h-3V9h2.88v1.37h.04c.4.76 1.38-1.56 2.84-1.56 3.04 0 3.6 2 3.6 4.6V19zM5.34 7.63c-.97 0-1.75-.79-1.75-1.76s.78-1.76 1.75-1.76 1.75.79 1.75 1.76-.78 1.76-1.75 1.76zM6.84 19H3.84V9h3v10z" />
+                        </svg>
+                    </a>
+    
+            </div>
+
+            <!-- Footer Bottom Section -->
+            <div
+                class="mt-12 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 border-t border-white/[0.05] pt-8">
+                <span class="flex items-center gap-1 select-none">
+                    &copy; <span class="font-outfit">2026</span> أ. محمد وحيد. جميع الحقوق محفوظة.
+                </span>
+                <span class="mt-2 sm:mt-0 flex items-center gap-1">
+                    تصميم وتطوير راقٍ بكل حب.
+                </span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interactive Scripts -->
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Dark Mode Logic
+        const darkModeToggle = document.getElementById('dark-mode-toggle');
+
+        // Check local storage or system preferences
+        if (localStorage.getItem('theme') === 'dark' || (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+
+        darkModeToggle.addEventListener('click', () => {
+            if (document.documentElement.classList.contains('dark')) {
+                document.documentElement.classList.remove('dark');
+                localStorage.setItem('theme', 'light');
+            } else {
+                document.documentElement.classList.add('dark');
+                localStorage.setItem('theme', 'dark');
+            }
+        });
+
+        // Floating Navbar scroll compression and shadow transition on scroll
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 20) {
+                navbar.classList.add('top-2', 'shadow-xl', 'shadow-brand-darkNavy/5', 'bg-white/80', 'dark:bg-brand-deepNavy/85');
+                navbar.classList.remove('top-4', 'shadow-lg', 'bg-white/70', 'dark:bg-brand-deepNavy/75');
+            } else {
+                navbar.classList.remove('top-2', 'shadow-xl', 'shadow-brand-darkNavy/5', 'bg-white/80', 'dark:bg-brand-deepNavy/85');
+                navbar.classList.add('top-4', 'shadow-lg', 'bg-white/70', 'dark:bg-brand-deepNavy/75');
+            }
+
+            // Scroll progress bar
+            const totalScroll = document.documentElement.scrollHeight - window.innerHeight;
+            if (totalScroll > 0) {
+                const scrollPercent = (window.scrollY / totalScroll) * 100;
+                document.getElementById('scroll-progress').style.width = `${scrollPercent}%`;
+            }
+        });
+
+        // Mobile Menu Logic
+        const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIconOpen = document.getElementById('menu-icon-open');
+        const menuIconClose = document.getElementById('menu-icon-close');
+
+        function toggleMenu() {
+            const isHidden = mobileMenu.classList.contains('hidden');
+            if (isHidden) {
+                mobileMenu.classList.remove('hidden');
+                menuIconOpen.classList.add('hidden');
+                menuIconClose.classList.remove('hidden');
+            } else {
+                mobileMenu.classList.add('hidden');
+                menuIconOpen.classList.remove('hidden');
+                menuIconClose.classList.add('hidden');
+            }
+        }
+
+        mobileMenuToggle.addEventListener('click', toggleMenu);
+
+        // Close menu on mobile nav link clicks
+        const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+        mobileNavLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                menuIconOpen.classList.remove('hidden');
+                menuIconClose.classList.add('hidden');
+            });
+        });
+
+        // Active Nav Links Scroll Spy
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        window.addEventListener('scroll', () => {
+            let currentSection = 'hero';
+
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 120;
+                const sectionHeight = section.clientHeight;
+                if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
+                    currentSection = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove(
+                    'text-white', 'bg-brand-darkNavy', 'dark:bg-brand-blue',
+                    'bg-brand-darkNavy/[0.08]', 'border-brand-darkNavy/15',
+                    'dark:bg-white/[0.08]', 'dark:border-white/10',
+                    'shadow-sm', 'shadow-brand-darkNavy/5', 'backdrop-blur-md', 'scale-[1.02]'
+                );
+                link.classList.add('text-brand-darkNavy', 'dark:text-slate-300', 'border-transparent');
+                if (link.getAttribute('href').slice(1) === currentSection) {
+                    link.classList.remove('text-brand-darkNavy', 'dark:text-slate-300', 'border-transparent');
+                    link.classList.add(
+                        'text-brand-darkNavy', 'dark:text-white',
+                        'bg-brand-darkNavy/[0.08]', 'border-brand-darkNavy/15',
+                        'dark:bg-white/[0.08]', 'dark:border-white/10',
+                        'shadow-sm', 'shadow-brand-darkNavy/5', 'backdrop-blur-md', 'scale-[1.02]'
+                    );
+                }
+            });
+        });
+
+        // Contact Form Handling (Validation + Simulated AJAX)
+        const form = document.getElementById('consultation-form');
+        const formAlert = document.getElementById('form-alert');
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            const name = document.getElementById('name').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+            const service = document.getElementById('service').value;
+            const message = document.getElementById('message').value.trim();
+
+            if (!name || !phone || !service || !message) {
+                showAlert('يرجى ملء جميع الحقول المطلوبة بشكل صحيح.', 'error');
+                return;
+            }
+
+            // Simple phone number validation (Egyptian phone number format check helper)
+            const egPhoneRegex = /^01[0125][0-9]{8}$/;
+            const isEgyptianPhone = egPhoneRegex.test(phone.replace(/\s+/g, ''));
+
+            if (phone.length < 8) {
+                showAlert('يرجى إدخال رقم هاتف صحيح.', 'error');
+                return;
+            }
+
+            // Simulate form submission
+            const submitBtn = form.querySelector('button[type="submit"]');
+            const originalBtnContent = submitBtn.innerHTML;
+
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = `
+                <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-white inline-block" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                </svg>
+                جاري إرسال الطلب...
+            `;
+
+            setTimeout(() => {
+                // Success feedback
+                showAlert('تم إرسال طلب الاستشارة بنجاح! سيتواصل معك المساعد الطبي الخاص بنا قريباً عبر الهاتف أو الواتساب.', 'success');
+                form.reset();
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = originalBtnContent;
+                lucide.createIcons(); // Re-initialize icons inside alert if any
+
+                // Auto hide alert after 8 seconds
+                setTimeout(() => {
+                    formAlert.classList.add('hidden');
+                }, 8000);
+
+            }, 1500);
+        });
+
+        function showAlert(msg, type) {
+            formAlert.classList.remove('hidden', 'bg-emerald-50', 'border-emerald-200', 'text-emerald-800', 'dark:bg-emerald-950/30', 'dark:border-emerald-800', 'dark:text-emerald-300', 'bg-red-50', 'border-red-200', 'text-red-800', 'dark:bg-red-950/30', 'dark:border-red-800', 'dark:text-red-300');
+
+            if (type === 'success') {
+                formAlert.classList.add('bg-emerald-50', 'border-emerald-200', 'text-emerald-800', 'dark:bg-emerald-950/30', 'dark:border-emerald-800', 'dark:text-emerald-300');
+                formAlert.innerHTML = `
+                    <i data-lucide="check-circle-2" class="w-5 h-5 text-emerald-600 dark:text-emerald-400 mt-0.5"></i>
+                    <div>
+                        <span class="font-bold">تم بنجاح!</span>
+                        <p class="text-xs mt-1">${msg}</p>
+                    </div>
+                `;
+            } else {
+                formAlert.classList.add('bg-red-50', 'border-red-200', 'text-red-800', 'dark:bg-red-950/30', 'dark:border-red-800', 'dark:text-red-300');
+                formAlert.innerHTML = `
+                    <i data-lucide="alert-circle" class="w-5 h-5 text-red-600 dark:text-red-400 mt-0.5"></i>
+                    <div>
+                        <span class="font-bold">تنبيه!</span>
+                        <p class="text-xs mt-1">${msg}</p>
+                    </div>
+                `;
+            }
+            lucide.createIcons();
+            formAlert.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+
+        // ── Request Service: pre-select dropdown & scroll to contact ──
+        function requestService(serviceValue) {
+            const select = document.getElementById('service');
+            if (select) {
+                select.value = serviceValue;
+                // Trigger a subtle highlight on the select to draw attention
+                select.classList.add('ring-2', 'ring-brand-blue', 'ring-offset-1');
+                setTimeout(() => select.classList.remove('ring-2', 'ring-brand-blue', 'ring-offset-1'), 2000);
+            }
+            const contactSection = document.getElementById('contact');
+            if (contactSection) {
+                contactSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }
+        // Removed Auto-Flip on Scroll Observer to allow manual flip interaction
+    </script>
+</body>
+
+</html>
