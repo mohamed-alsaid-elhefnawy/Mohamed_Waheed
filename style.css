@@ -27,6 +27,31 @@
     --transition-fast: 0.2s ease;
     --transition-smooth: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-slow: 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+
+    /* ألوان ورموز شبكات التواصل الاجتماعي - وضع نهاري */
+    --wa-color: #128c7e;
+    --wa-bg: rgba(37, 211, 102, 0.08);
+    --wa-border: rgba(37, 211, 102, 0.35);
+    --wa-glow: rgba(37, 211, 102, 0.2);
+
+    --li-color: #0a66c2;
+    --li-bg: rgba(10, 102, 194, 0.08);
+    --li-border: rgba(10, 102, 194, 0.35);
+    --li-glow: rgba(10, 102, 194, 0.2);
+
+    --gm-color: #ea4335;
+    --gm-bg: rgba(234, 67, 53, 0.08);
+    --gm-border: rgba(234, 67, 53, 0.35);
+    --gm-glow: rgba(234, 67, 53, 0.2);
+
+    --fb-color: #1877f2;
+    --fb-bg: rgba(24, 119, 242, 0.08);
+    --fb-border: rgba(24, 119, 242, 0.35);
+    --fb-glow: rgba(24, 119, 242, 0.2);
+
+    --glass-blur: blur(12px);
+    --social-btn-size: 3.5rem;
+    --social-icon-size: 1.5rem;
 }
 
 /* متغيرات الوضع الداكن (Dark Mode) - كحلي فاخر */
@@ -44,6 +69,27 @@
     --shadow-hover: 0 15px 40px rgba(78, 168, 222, 0.25);
     --glass-bg: rgba(7, 20, 38, 0.75);
     --glass-border: rgba(255, 255, 255, 0.1);
+
+    /* ألوان ورموز شبكات التواصل الاجتماعي - وضع ليلي */
+    --wa-color: #25d366;
+    --wa-bg: rgba(37, 211, 102, 0.12);
+    --wa-border: rgba(37, 211, 102, 0.45);
+    --wa-glow: rgba(37, 211, 102, 0.35);
+
+    --li-color: #3b90ff;
+    --li-bg: rgba(56, 138, 246, 0.12);
+    --li-border: rgba(56, 138, 246, 0.45);
+    --li-glow: rgba(56, 138, 246, 0.35);
+
+    --gm-color: #ff5242;
+    --gm-bg: rgba(255, 82, 66, 0.12);
+    --gm-border: rgba(255, 82, 66, 0.45);
+    --gm-glow: rgba(255, 82, 66, 0.35);
+
+    --fb-color: #4f96ff;
+    --fb-bg: rgba(79, 150, 255, 0.12);
+    --fb-border: rgba(79, 150, 255, 0.45);
+    --fb-glow: rgba(79, 150, 255, 0.35);
 }
 
 /* ── 2. الإعدادات الأساسية والتجاوب (Base & Reset) ── */
@@ -172,16 +218,19 @@ body {
 .glowing-certificate-card {
     position: relative;
     border-radius: 1.5rem;
-    background: #ffffff;
-    border: 1px solid rgba(0, 120, 200, 0.08);
-    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04), 0 1px 4px rgba(0, 0, 0, 0.04);
-    transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1),
-        box-shadow 0.45s cubic-bezier(0.16, 1, 0.3, 1),
-        border-color 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+    background: #f8fafc; /* Beautifully visible light gray-blue rectangle under the text */
+    border: 1px solid rgba(58, 134, 200, 0.15); /* Sleek, crisp border */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
     z-index: 10;
     overflow: visible;
     /* Entry animation */
     animation: certCardFadeUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.glowing-certificate-card > * {
+    position: relative;
+    z-index: 2;
 }
 
 @keyframes certCardFadeUp {
@@ -235,33 +284,55 @@ body {
 .glowing-certificate-card::after {
     content: '';
     position: absolute;
-    bottom: -18px;
-    left: 15%;
-    right: 15%;
-    height: 40px;
-    background: radial-gradient(ellipse at center, rgba(0, 194, 255, 0.7) 0%, rgba(0, 194, 255, 0) 72%);
+    bottom: -15px;
+    left: 10%;
+    right: 10%;
+    height: 35px;
+    background: radial-gradient(ellipse at center, rgba(0, 194, 255, 0.6) 0%, rgba(0, 194, 255, 0) 70%);
     opacity: 0;
-    transition: opacity 0.45s cubic-bezier(0.16, 1, 0.3, 1),
-        transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
     pointer-events: none;
     z-index: -1;
-    filter: blur(12px);
+    filter: blur(15px);
     transform: scaleX(0.8);
 }
 
-/* Light mode: also show a light glow, just softer */
+/* Light Mode Hover Glow */
 .glowing-certificate-card:hover::after {
-    opacity: 0.6;
-    transform: scaleX(1.2);
+    opacity: 0.7;
+    transform: scaleX(1.15) translateY(2px);
 }
 
+/* Dark Mode Hover Glow (More radiant) */
 .dark .glowing-certificate-card:hover::after {
     opacity: 1;
-    transform: scaleX(1.3);
+    transform: scaleX(1.25) translateY(2px);
+    background: radial-gradient(ellipse at center, rgba(0, 194, 255, 0.8) 0%, rgba(0, 194, 255, 0) 70%);
+}
+
+/* Subtle inner background light on hover */
+.glowing-certificate-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 1.5rem;
+    background: radial-gradient(circle at 50% 50%, rgba(0, 194, 255, 0.05) 0%, rgba(0, 194, 255, 0) 70%);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.dark .glowing-certificate-card::before {
+    background: radial-gradient(circle at 50% 50%, rgba(0, 194, 255, 0.12) 0%, rgba(0, 194, 255, 0) 70%);
+}
+
+.glowing-certificate-card:hover::before {
+    opacity: 1;
 }
 
 .glowing-certificate-card:hover {
-    transform: translateY(-18px);
+    transform: translateY(-10px);
     border-color: rgba(0, 194, 255, 0.35);
     box-shadow:
         0 28px 55px -12px rgba(0, 100, 200, 0.12),
@@ -368,77 +439,153 @@ footer a:hover {
 
 /* ── 14. فوتر زجاجي (Futuristic Footer Glassmorphism) ── */
 .futurism-glass {
-    background: rgba(10, 17, 40, 0.55);
+    background: rgba(255, 255, 255, 0.75);
     backdrop-filter: blur(24px) saturate(1.6);
     -webkit-backdrop-filter: blur(24px) saturate(1.6);
-    border: 1px solid rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(58, 134, 200, 0.12);
     box-shadow:
-        0 8px 32px rgba(0, 0, 0, 0.45),
+        0 20px 40px -15px rgba(58, 134, 200, 0.06),
+        0 1px 3px rgba(58, 134, 200, 0.02),
+        0 0 0 1px rgba(255, 255, 255, 0.6) inset;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.dark .futurism-glass {
+    background: rgba(11, 29, 53, 0.55);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow:
+        0 25px 60px -20px rgba(0, 0, 0, 0.5),
         0 0 0 1px rgba(0, 194, 255, 0.04) inset;
 }
 
-/* Fallback for light mode – keep it semi-transparent dark */
-:root:not(.dark) .futurism-glass {
-    background: rgba(7, 23, 57, 0.80);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-}
 
 /* ── Footer Ambient Glow Pulse ── */
 @keyframes pulseGlow {
-
-    0%,
-    100% {
-        opacity: 0.4;
+    0%, 100% {
+        opacity: 0.35;
         transform: translate(-50%, -50%) scale(1);
     }
-
     50% {
-        opacity: 0.7;
-        transform: translate(-50%, -50%) scale(1.12);
+        opacity: 0.65;
+        transform: translate(-50%, -50%) scale(1.1);
     }
 }
 
 .animate-pulse-glow {
-    animation: pulseGlow 5s ease-in-out infinite;
+    animation: pulseGlow 6s ease-in-out infinite;
 }
 
 /* ── Footer Floating Particles ── */
 @keyframes floatSlow {
-
-    0%,
-    100% {
+    0%, 100% {
         transform: translateY(0px) translateX(0px);
     }
-
     33% {
-        transform: translateY(-18px) translateX(8px);
+        transform: translateY(-15px) translateX(6px);
     }
-
     66% {
-        transform: translateY(-8px) translateX(-6px);
+        transform: translateY(-6px) translateX(-4px);
     }
 }
 
 @keyframes floatSlower {
-
-    0%,
-    100% {
+    0%, 100% {
         transform: translateY(0px) translateX(0px);
     }
-
     40% {
-        transform: translateY(-24px) translateX(-10px);
+        transform: translateY(-20px) translateX(-8px);
     }
-
     70% {
-        transform: translateY(-12px) translateX(14px);
+        transform: translateY(-10px) translateX(12px);
     }
 }
 
 .animate-float-slow {
-    animation: floatSlow 8s ease-in-out infinite;
+    animation: floatSlow 7s ease-in-out infinite;
 }
 
 .animate-float-slower {
-    animation: floatSlower 12s ease-in-out infinite;
+    animation: floatSlower 11s ease-in-out infinite;
+}
+
+/* ── 15. أزرار التواصل الاجتماعي الزجاجية الفاخرة (Premium Social Icons) ── */
+
+.glass-social-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 1.25rem;
+    flex-wrap: wrap;
+    direction: ltr; /* Ensure left-to-right order always matches visual flow */
+}
+
+/* زر زجاجي دائري مثالي */
+.glass-social-btn {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: var(--social-btn-size);
+    height: var(--social-btn-size);
+    border-radius: 50%;
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+    outline: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+}
+
+/* تأثير الطفو المجهري الفاخر */
+.glass-social-btn:hover {
+    transform: translateY(-6px) scale(1.1);
+}
+
+.glass-social-btn:active {
+    transform: translateY(-2px) scale(0.95);
+}
+
+/* إعدادات وتخصيص كل زر بالوراثة التلقائية للتنسيق */
+.glass-social-btn.wa-btn {
+    background-color: var(--wa-bg);
+    border: 1px solid var(--wa-border);
+    color: var(--wa-color);
+}
+.glass-social-btn.wa-btn:hover {
+    box-shadow: 0 10px 25px var(--wa-glow), 0 0 12px var(--wa-border) inset;
+}
+
+.glass-social-btn.li-btn {
+    background-color: var(--li-bg);
+    border: 1px solid var(--li-border);
+    color: var(--li-color);
+}
+.glass-social-btn.li-btn:hover {
+    box-shadow: 0 10px 25px var(--li-glow), 0 0 12px var(--li-border) inset;
+}
+
+.glass-social-btn.gm-btn {
+    background-color: var(--gm-bg);
+    border: 1px solid var(--gm-border);
+    color: var(--gm-color);
+}
+.glass-social-btn.gm-btn:hover {
+    box-shadow: 0 10px 25px var(--gm-glow), 0 0 12px var(--gm-border) inset;
+}
+
+.glass-social-btn.fb-btn {
+    background-color: var(--fb-bg);
+    border: 1px solid var(--fb-border);
+    color: var(--fb-color);
+}
+.glass-social-btn.fb-btn:hover {
+    box-shadow: 0 10px 25px var(--fb-glow), 0 0 12px var(--fb-border) inset;
+}
+
+/* أيقونة SVG متناسقة مع التكبير والتمركز */
+.glass-social-btn svg {
+    width: var(--social-icon-size);
+    height: var(--social-icon-size);
+    transition: transform 300ms ease;
+    fill: currentColor; /* Inherit color automatically from variable */
 }

@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ar" dir="rtl" class="scroll-smooth">
 
 <head>
@@ -207,6 +207,131 @@
 
         .service-flip-card.reveal-once .service-flip-inner {
             animation: serviceReveal 2.4s cubic-bezier(0.4, 0.2, 0.2, 1) forwards;
+        }
+
+        /* ── ألوان وتأثيرات أزرار التواصل الاجتماعي الفاخرة ── */
+        :root {
+            --wa-color: #128c7e;
+            --wa-bg: rgba(37, 211, 102, 0.08);
+            --wa-border: rgba(37, 211, 102, 0.35);
+            --wa-glow: rgba(37, 211, 102, 0.2);
+
+            --li-color: #0a66c2;
+            --li-bg: rgba(10, 102, 194, 0.08);
+            --li-border: rgba(10, 102, 194, 0.35);
+            --li-glow: rgba(10, 102, 194, 0.2);
+
+            --gm-color: #ea4335;
+            --gm-bg: rgba(234, 67, 53, 0.08);
+            --gm-border: rgba(234, 67, 53, 0.35);
+            --gm-glow: rgba(234, 67, 53, 0.2);
+
+            --fb-color: #1877f2;
+            --fb-bg: rgba(24, 119, 242, 0.08);
+            --fb-border: rgba(24, 119, 242, 0.35);
+            --fb-glow: rgba(24, 119, 242, 0.2);
+
+            --glass-blur: blur(12px);
+            --social-btn-size: 3.5rem;
+            --social-icon-size: 1.5rem;
+        }
+
+        .dark {
+            --wa-color: #25d366;
+            --wa-bg: rgba(37, 211, 102, 0.12);
+            --wa-border: rgba(37, 211, 102, 0.45);
+            --wa-glow: rgba(37, 211, 102, 0.35);
+
+            --li-color: #3b90ff;
+            --li-bg: rgba(56, 138, 246, 0.12);
+            --li-border: rgba(56, 138, 246, 0.45);
+            --li-glow: rgba(56, 138, 246, 0.35);
+
+            --gm-color: #ff5242;
+            --gm-bg: rgba(255, 82, 66, 0.12);
+            --gm-border: rgba(255, 82, 66, 0.45);
+            --gm-glow: rgba(255, 82, 66, 0.35);
+
+            --fb-color: #4f96ff;
+            --fb-bg: rgba(79, 150, 255, 0.12);
+            --fb-border: rgba(79, 150, 255, 0.45);
+            --fb-glow: rgba(79, 150, 255, 0.35);
+        }
+
+        .glass-social-container {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            gap: 1.25rem;
+            flex-wrap: wrap;
+            direction: ltr; /* Ensure left-to-right order matches visual flow */
+        }
+
+        .glass-social-btn {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: var(--social-btn-size);
+            height: var(--social-btn-size);
+            border-radius: 50%;
+            backdrop-filter: var(--glass-blur);
+            -webkit-backdrop-filter: var(--glass-blur);
+            transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+            outline: none;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+        }
+
+        .glass-social-btn:hover {
+            transform: translateY(-6px) scale(1.1);
+        }
+
+        .glass-social-btn:active {
+            transform: translateY(-2px) scale(0.95);
+        }
+
+        .glass-social-btn.wa-btn {
+            background-color: var(--wa-bg);
+            border: 1px solid var(--wa-border);
+            color: var(--wa-color);
+        }
+        .glass-social-btn.wa-btn:hover {
+            box-shadow: 0 10px 25px var(--wa-glow), 0 0 12px var(--wa-border) inset;
+        }
+
+        .glass-social-btn.li-btn {
+            background-color: var(--li-bg);
+            border: 1px solid var(--li-border);
+            color: var(--li-color);
+        }
+        .glass-social-btn.li-btn:hover {
+            box-shadow: 0 10px 25px var(--li-glow), 0 0 12px var(--li-border) inset;
+        }
+
+        .glass-social-btn.gm-btn {
+            background-color: var(--gm-bg);
+            border: 1px solid var(--gm-border);
+            color: var(--gm-color);
+        }
+        .glass-social-btn.gm-btn:hover {
+            box-shadow: 0 10px 25px var(--gm-glow), 0 0 12px var(--gm-border) inset;
+        }
+
+        .glass-social-btn.fb-btn {
+            background-color: var(--fb-bg);
+            border: 1px solid var(--fb-border);
+            color: var(--fb-color);
+        }
+        .glass-social-btn.fb-btn:hover {
+            box-shadow: 0 10px 25px var(--fb-glow), 0 0 12px var(--fb-border) inset;
+        }
+
+        .glass-social-btn svg {
+            width: var(--social-icon-size);
+            height: var(--social-icon-size);
+            transition: transform 300ms ease;
+            fill: currentColor;
         }
     </style>
 </head>
@@ -1568,70 +1693,10 @@
                 <div class="w-16 h-1 bg-brand-blue mx-auto mt-4 rounded-full"></div>
             </div>
 
-            <!-- Contact Grid -->
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
-
-                <!-- Contact info details (5 cols) -->
-                <div class="lg:col-span-5 space-y-6">
-                    <h3 class="text-2xl font-bold text-brand-darkNavy dark:text-white">تفاصيل الاتصال</h3>
-                    <p class="text-slate-600 dark:text-slate-300 leading-relaxed mb-6">
-                        نحن نسعد بالإجابة على استفساراتكم بخصوص البرامج التأهيلية. تواصلوا معنا مباشرة أو قوموا بملء
-                        النموذج وسيقوم المساعد الطبي بالتواصل معكم لتأكيد الموعد.
-                    </p>
-
-                    <div class="space-y-4">
-
-                        <!-- Address -->
-                        <div
-                            class="flex items-start space-x-4 space-x-reverse p-4 bg-white dark:bg-gradient-to-br dark:from-brand-cardNavy1 dark:to-brand-cardNavy2 border border-slate-100 dark:border-white/5 dark:shadow-xl dark:shadow-[#040b17]/60 dark:backdrop-blur-md rounded-2xl">
-                            <div
-                                class="p-3 bg-brand-blue/10 dark:bg-brand-blue/20 text-brand-blue dark:text-brand-lightBlue rounded-xl">
-                                <i data-lucide="map-pin" class="w-6 h-6"></i>
-                            </div>
-                            <div>
-                                <span class="block text-xs text-slate-400 dark:text-slate-500">العنوان</span>
-                                <span class="text-sm font-bold text-slate-700 dark:text-slate-200">المنصورة، محافظة
-                                    الدقهلية، مصر</span>
-                            </div>
-                        </div>
-
-                        <!-- Phone -->
-                        <div
-                            class="flex items-start space-x-4 space-x-reverse p-4 bg-white dark:bg-gradient-to-br dark:from-brand-cardNavy1 dark:to-brand-cardNavy2 border border-slate-100 dark:border-white/5 dark:shadow-xl dark:shadow-[#040b17]/60 dark:backdrop-blur-md rounded-2xl">
-                            <div
-                                class="p-3 bg-brand-blue/10 dark:bg-brand-blue/20 text-brand-blue dark:text-brand-lightBlue rounded-xl">
-                                <i data-lucide="phone" class="w-6 h-6"></i>
-                            </div>
-                            <div>
-                                <span class="block text-xs text-slate-400 dark:text-slate-500">الهاتف والواتساب</span>
-                                <a href="https://wa.me/201095100240" target="_blank" rel="noopener noreferrer"
-                                    class="text-sm font-bold text-slate-700 dark:text-slate-200 hover:text-brand-blue transition-colors font-outfit inline-block dir-ltr">
-                                    +20 109 510 0240
-                                </a>
-                            </div>
-                        </div>
-
-                        <!-- Email -->
-                        <div
-                            class="flex items-start space-x-4 space-x-reverse p-4 bg-white dark:bg-gradient-to-br dark:from-brand-cardNavy1 dark:to-brand-cardNavy2 border border-slate-100 dark:border-white/5 dark:shadow-xl dark:shadow-[#040b17]/60 dark:backdrop-blur-md rounded-2xl">
-                            <div
-                                class="p-3 bg-brand-blue/10 dark:bg-brand-blue/20 text-brand-blue dark:text-brand-lightBlue rounded-xl">
-                                <i data-lucide="mail" class="w-6 h-6"></i>
-                            </div>
-                            <div>
-                                <span class="block text-xs text-slate-400 dark:text-slate-500">البريد الإلكتروني</span>
-                                <a href="mailto:abowaheed975@gmail.com"
-                                    class="text-sm font-bold text-slate-700 dark:text-slate-200 hover:text-brand-blue transition-colors font-outfit inline-block">
-                                    abowaheed975@gmail.com
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Contact form container (7 cols) -->
+            <!-- Centered Contact Form Container -->
+            <div class="max-w-3xl mx-auto">
                 <div
-                    class="lg:col-span-7 bg-white dark:bg-brand-deepNavy p-8 sm:p-10 rounded-3xl border border-slate-100 dark:border-brand-darkNavy shadow-sm">
+                    class="bg-white dark:bg-brand-deepNavy p-8 sm:p-10 rounded-3xl border border-slate-100 dark:border-brand-darkNavy shadow-sm">
                     <form id="consultation-form" class="space-y-6">
 
                         <!-- Alert message Container (Hidden by default) -->
@@ -1668,13 +1733,15 @@
                                 <input type="number" id="age" min="1" max="18"
                                     class="w-full px-4 py-3 rounded-xl border border-slate-200 dark:border-brand-darkNavy bg-slate-50 dark:bg-brand-deepNavy text-slate-800 dark:text-slate-100 focus:outline-none focus:border-brand-blue focus:bg-white dark:focus:bg-slate-950 transition-colors duration-200 text-sm">
                             </div>
-                            <!-- Service Select -->
-                            <div>
+                            <!-- Service Select (Custom styled dropdown wrapper) -->
+                            <div class="relative">
                                 <label for="service"
                                     class="block text-xs font-bold text-slate-500 dark:text-slate-400 mb-2">نوع الخدمة
                                     المطلوبة *</label>
+
+                                <!-- Hidden Native Select for standard form validation & compatibility -->
                                 <select id="service" required
-                                    class="w-full px-4 py-3 rounded-xl border border-slate-200 dark:border-brand-darkNavy bg-slate-50 dark:bg-brand-deepNavy text-slate-800 dark:text-slate-100 focus:outline-none focus:border-brand-blue focus:bg-white dark:focus:bg-slate-950 transition-colors duration-200 text-sm">
+                                    class="absolute inset-0 w-full h-full opacity-0 pointer-events-none" tabindex="-1">
                                     <option value="" disabled selected>اختر الخدمة...</option>
                                     <option value="speech">جلسات تخاطب وعلاج نطق</option>
                                     <option value="behavior">تعديل سلوك</option>
@@ -1684,6 +1751,66 @@
                                     <option value="adhd">فرط الحركة وتشتت الانتباه</option>
                                     <option value="other">أخرى / استشارة عامة</option>
                                 </select>
+
+                                <!-- Custom Dropdown UI -->
+                                <div class="relative" id="custom-select-wrapper">
+                                    <button type="button" id="custom-select-trigger"
+                                        class="w-full flex items-center justify-between px-4 py-3 rounded-xl border border-slate-200 dark:border-brand-darkNavy bg-slate-50 dark:bg-brand-deepNavy text-slate-400 dark:text-slate-400 focus:outline-none focus:border-brand-blue focus:ring-1 focus:ring-brand-blue/30 dark:focus:border-brand-lightBlue transition-all duration-200 text-sm">
+                                        <span id="custom-select-label">اختر الخدمة...</span>
+                                        <i data-lucide="chevron-down"
+                                            class="w-4 h-4 text-slate-400 dark:text-slate-500 transition-transform duration-300 pointer-events-none"
+                                            id="custom-select-chevron"></i>
+                                    </button>
+
+                                    <!-- Options Dropdown Menu -->
+                                    <div id="custom-select-menu"
+                                        class="hidden absolute z-50 left-0 right-0 mt-1.5 rounded-xl border border-slate-200/80 dark:border-white/5 bg-white/95 dark:bg-brand-deepNavy/95 shadow-xl shadow-slate-200/30 dark:shadow-black/50 backdrop-blur-md overflow-hidden transform opacity-0 scale-95 transition-all duration-200 origin-top text-right">
+                                        <div class="py-1.5 max-h-60 overflow-y-auto">
+                                            <div data-value="speech"
+                                                class="custom-option px-4 py-2.5 hover:bg-slate-50 dark:hover:bg-white/[0.04] text-slate-700 dark:text-slate-300 text-sm cursor-pointer transition-colors flex items-center justify-between">
+                                                <span>جلسات تخاطب وعلاج نطق</span>
+                                                <i data-lucide="check"
+                                                    class="w-4 h-4 text-brand-blue dark:text-brand-lightBlue opacity-0 transition-opacity"></i>
+                                            </div>
+                                            <div data-value="behavior"
+                                                class="custom-option px-4 py-2.5 hover:bg-slate-50 dark:hover:bg-white/[0.04] text-slate-700 dark:text-slate-300 text-sm cursor-pointer transition-colors flex items-center justify-between">
+                                                <span>تعديل سلوك</span>
+                                                <i data-lucide="check"
+                                                    class="w-4 h-4 text-brand-blue dark:text-brand-lightBlue opacity-0 transition-opacity"></i>
+                                            </div>
+                                            <div data-value="skills"
+                                                class="custom-option px-4 py-2.5 hover:bg-slate-50 dark:hover:bg-white/[0.04] text-slate-700 dark:text-slate-300 text-sm cursor-pointer transition-colors flex items-center justify-between">
+                                                <span>تنمية مهارات</span>
+                                                <i data-lucide="check"
+                                                    class="w-4 h-4 text-brand-blue dark:text-brand-lightBlue opacity-0 transition-opacity"></i>
+                                            </div>
+                                            <div data-value="learning"
+                                                class="custom-option px-4 py-2.5 hover:bg-slate-50 dark:hover:bg-white/[0.04] text-slate-700 dark:text-slate-300 text-sm cursor-pointer transition-colors flex items-center justify-between">
+                                                <span>صعوبات تعلم</span>
+                                                <i data-lucide="check"
+                                                    class="w-4 h-4 text-brand-blue dark:text-brand-lightBlue opacity-0 transition-opacity"></i>
+                                            </div>
+                                            <div data-value="autism"
+                                                class="custom-option px-4 py-2.5 hover:bg-slate-50 dark:hover:bg-white/[0.04] text-slate-700 dark:text-slate-300 text-sm cursor-pointer transition-colors flex items-center justify-between">
+                                                <span>تأهيل طيف التوحد</span>
+                                                <i data-lucide="check"
+                                                    class="w-4 h-4 text-brand-blue dark:text-brand-lightBlue opacity-0 transition-opacity"></i>
+                                            </div>
+                                            <div data-value="adhd"
+                                                class="custom-option px-4 py-2.5 hover:bg-slate-50 dark:hover:bg-white/[0.04] text-slate-700 dark:text-slate-300 text-sm cursor-pointer transition-colors flex items-center justify-between">
+                                                <span>فرط الحركة وتشتت الانتباه</span>
+                                                <i data-lucide="check"
+                                                    class="w-4 h-4 text-brand-blue dark:text-brand-lightBlue opacity-0 transition-opacity"></i>
+                                            </div>
+                                            <div data-value="other"
+                                                class="custom-option px-4 py-2.5 hover:bg-slate-50 dark:hover:bg-white/[0.04] text-slate-700 dark:text-slate-300 text-sm cursor-pointer transition-colors flex items-center justify-between">
+                                                <span>أخرى / استشارة عامة</span>
+                                                <i data-lucide="check"
+                                                    class="w-4 h-4 text-brand-blue dark:text-brand-lightBlue opacity-0 transition-opacity"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
 
@@ -1693,15 +1820,17 @@
                                 class="block text-xs font-bold text-slate-500 dark:text-slate-400 mb-2">اشرح لنا حالة
                                 الطفل بإيجاز *</label>
                             <textarea id="message" rows="4" required
-                                class="w-full px-4 py-3 rounded-xl border border-slate-200 dark:border-brand-darkNavy bg-slate-50 dark:bg-brand-deepNavy text-slate-800 dark:text-slate-100 focus:outline-none focus:border-brand-blue focus:bg-white dark:focus:bg-slate-950 transition-colors duration-200 text-sm"></textarea>
+                                class="w-full px-4 py-3 rounded-xl border border-slate-200 dark:border-brand-darkNavy bg-slate-50 dark:bg-brand-deepNavy text-slate-800 dark:text-slate-100 focus:outline-none focus:border-brand-blue focus:bg-white dark:focus:bg-slate-950 transition-colors duration-200 text-sm resize-none"></textarea>
                         </div>
 
                         <!-- Submit Button -->
-                        <button type="submit"
-                            class="w-full inline-flex items-center justify-center px-8 py-4 rounded-xl text-base font-semibold bg-brand-blue hover:bg-brand-blue/90 text-white shadow-lg shadow-brand-blue/25 dark:shadow-[0_0_15px_rgba(58,134,200,0.4)] hover:shadow-xl transition-all duration-200">
-                            <i data-lucide="send" class="w-5 h-5 ml-2"></i>
-                            إرسال طلب الاستشارة
-                        </button>
+                        <div class="flex justify-center pt-2">
+                            <button type="submit"
+                                class="inline-flex items-center justify-center px-6 py-3 rounded-xl text-sm font-semibold bg-brand-blue hover:bg-brand-blue/90 text-white shadow-md shadow-brand-blue/20 hover:shadow-lg transition-all duration-200">
+                                <i data-lucide="send" class="w-4 h-4 ml-2"></i>
+                                إرسال طلب الاستشارة
+                            </button>
+                        </div>
                     </form>
                 </div>
 
@@ -1710,160 +1839,153 @@
     </section>
 
 
-    <!-- Footer -->
-    <footer class="relative text-slate-400 py-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
-        <!-- 3D Cinematic Glow & Light Background Layers -->
-        <!-- Spotlight behind content -->
-        <div
-            class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-gradient-to-r from-[#00C2FF]/10 to-blue-500/10 blur-[130px] pointer-events-none z-0 animate-pulse-glow">
-        </div>
+    <!-- Redesigned Premium Footer -->
+    <footer
+        class="relative bg-slate-50 dark:bg-[#050c18] text-slate-600 dark:text-slate-400 pt-8 pb-6 border-t border-slate-200/60 dark:border-white/5 overflow-hidden transition-colors duration-300">
 
-        <!-- Soft Cyan Floating Ambient Particles (Replace cartoons completely with luxury futuristic visual style) -->
-        <div
-            class="absolute top-[10%] left-[8%] w-24 h-24 rounded-full bg-[#00C2FF]/5 blur-2xl animate-float-slow pointer-events-none z-0">
-        </div>
-        <div
-            class="absolute bottom-[15%] right-[10%] w-32 h-32 rounded-full bg-blue-500/5 blur-3xl animate-float-slower pointer-events-none z-0">
-        </div>
-
-        <!-- Subtle Neon Dots/Stars -->
-        <div
-            class="absolute top-[25%] right-[20%] w-2.5 h-2.5 rounded-full bg-[#00C2FF] shadow-[0_0_12px_#00C2FF] animate-pulse pointer-events-none z-0">
-        </div>
-        <div class="absolute bottom-[35%] left-[22%] w-1.5 h-1.5 rounded-full bg-blue-400 shadow-[0_0_8px_#3a86c8] animate-pulse pointer-events-none z-0"
-            style="animation-delay: 2s;"></div>
-        <div class="absolute top-[65%] left-[15%] w-2 h-2 rounded-full bg-[#00C2FF] shadow-[0_0_10px_#00C2FF] animate-pulse pointer-events-none z-0"
-            style="animation-delay: 1s;"></div>
-
-
-            <!-- Main Frosted Glass Card Wrapper (Layered Depth) -->
+        <!-- Background Ambient Glow Spotlights -->
+        <div class="absolute inset-0 pointer-events-none z-0" aria-hidden="true">
+            <!-- Glow 1 (Cyan) -->
             <div
-                class="futurism-glass rounded-3xl p-8 sm:p-12 md:p-16 text-center space-y-10 transition-transform duration-500 hover:scale-[1.005] hover:shadow-[0_40px_80px_-20px_rgba(0,194,255,0.08)]">
+                class="absolute -top-40 -left-40 w-[600px] h-[600px] rounded-full bg-brand-blue/10 dark:bg-[#00c2ff]/10 blur-[130px] animate-pulse-glow">
+            </div>
+            <!-- Glow 2 (Blue) -->
+            <div class="absolute -bottom-40 -right-40 w-[600px] h-[600px] rounded-full bg-brand-lightBlue/10 dark:bg-blue-500/10 blur-[130px] animate-pulse-glow"
+                style="animation-delay: 3s;"></div>
+            <!-- Floating Particles -->
+            <div
+                class="absolute top-1/4 right-[10%] w-24 h-24 rounded-full bg-brand-blue/5 dark:bg-[#00c2ff]/5 blur-2xl animate-float-slow">
+            </div>
+            <div
+                class="absolute bottom-1/4 left-[10%] w-32 h-32 rounded-full bg-brand-lightBlue/5 dark:bg-blue-500/5 blur-3xl animate-float-slower">
+            </div>
+        </div>
 
-                <!-- Medical/Futuristic 3D Floating Crest/Accent -->
-                <div class="flex justify-center mb-2">
-                    <div
-                        class="w-16 h-16 rounded-2xl bg-gradient-to-tr from-[#00C2FF]/10 to-[#3a86c8]/20 border border-white/[0.08] backdrop-blur-md flex items-center justify-center shadow-[0_8px_32px_rgba(0,194,255,0.1)] hover:rotate-12 hover:scale-110 transition-all duration-300 relative group cursor-pointer">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+
+            <!-- Frosted Glass Card Wrapper -->
+            <div class="futurism-glass rounded-2xl p-5 sm:p-7 md:p-8 space-y-6">
+
+                <!-- Section 5: Modern Contact Hub, Active Hours & Quick Links -->
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-8 text-right">
+
+                    <!-- Logo / Spec Brand Card (4 Columns) -->
+                    <div class="md:col-span-4 space-y-2 flex flex-col items-center text-center">
+                        <!-- Large Avatar -->
                         <div
-                            class="absolute inset-0 rounded-2xl bg-gradient-to-tr from-[#00C2FF]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-sm">
+                            class="w-24 h-24 rounded-full border-4 border-white dark:border-brand-darkNavy shadow-xl shadow-brand-blue/20 ring-2 ring-brand-blue/20 dark:ring-[#00c2ff]/20">
+                            <img src="icon.png" alt="أ. محمد وحيد" class="w-full h-full object-cover rounded-full">
                         </div>
-                        <!-- A medical/speech therapy-inspired abstract 3D icon -->
-                        <svg class="w-8 h-8 text-[#00C2FF] drop-shadow-[0_0_8px_rgba(0,194,255,0.6)]"
-                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
-                            stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z" />
-                            <path d="M19 10v1a7 7 0 0 1-14 0v-1" />
-                            <line x1="12" x2="12" y1="19" y2="22" />
-                        </svg>
+                        <!-- Name & Title -->
+                        <div class="flex flex-col items-center gap-1">
+                            <span class="text-xl font-extrabold text-brand-darkNavy dark:text-white tracking-tight">أ.
+                                محمد وحيد</span>
+                            <span class="text-xs text-brand-blue dark:text-brand-lightBlue font-semibold">أخصائي التربية
+                                الخاصة والتخاطب</span>
+                        </div>
                     </div>
-                </div>
 
-                <!-- Specialist Identity -->
-                <div class="space-y-4">
-                    <h2
-                        class="text-4xl sm:text-5xl font-black bg-gradient-to-r from-white via-cyan-100 to-blue-200 bg-clip-text text-transparent tracking-wide drop-shadow-[0_2px_10px_rgba(0,194,255,0.25)] select-none">
-                        أ. محمد وحيد
-                    </h2>
-                    <p class="text-base sm:text-lg text-cyan-400 font-semibold tracking-wide max-w-xl mx-auto">
-                        أخصائي معتمد في التربية الخاصة وتعديل السلوك وعلاج عيوب النطق والكلام
-                    </p>
-                    <p class="text-xs sm:text-sm text-slate-400 max-w-2xl mx-auto leading-relaxed font-light">
-                        نلتزم بأعلى معايير الرعاية المهنية والسرية التامة لمساعدة أطفالكم على التغلب على صعوبات النطق
-                        وتنمية مهاراتهم السلوكية والاجتماعية بأحدث الطرق العلمية المتطورة.
-                    </p>
-                </div>
+                    <!-- Quick Navigation Links (3 Columns) -->
+                    <div class="md:col-span-3 space-y-2">
+                        <h4
+                            class="text-sm font-bold text-brand-darkNavy dark:text-white border-r-2 border-brand-blue pr-2.5">
+                            روابط وتصفح سريع</h4>
+                        <div class="grid grid-cols-2 gap-x-6 gap-y-2 text-xs font-medium">
 
-                <!-- Futuristic Glowing Divider 1 -->
-                <div class="h-[1px] w-full bg-gradient-to-r from-transparent via-cyan-500/30 to-transparent relative">
-                    <div
-                        class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-2 h-2 rounded-full bg-[#00C2FF] shadow-[0_0_10px_#00C2FF] animate-pulse">
+                            <!-- Row 1 -->
+                            <a href="#hero"
+                                class="relative py-1 text-slate-500 hover:text-brand-blue dark:text-slate-400 dark:hover:text-white transition-colors duration-300 group inline-block">
+                                الرئيسية
+                                <span
+                                    class="absolute bottom-0 right-0 w-0 h-[1.5px] bg-brand-blue dark:bg-[#00C2FF] transition-all duration-300 group-hover:w-full"></span>
+                            </a>
+                            <a href="#about"
+                                class="relative py-1 text-slate-500 hover:text-brand-blue dark:text-slate-400 dark:hover:text-white transition-colors duration-300 group inline-block">
+                                نبذة شخصية
+                                <span
+                                    class="absolute bottom-0 right-0 w-0 h-[1.5px] bg-brand-blue dark:bg-[#00C2FF] transition-all duration-300 group-hover:w-full"></span>
+                            </a>
+
+                            <!-- Row 2 -->
+                            <a href="#services"
+                                class="relative py-1 text-slate-500 hover:text-brand-blue dark:text-slate-400 dark:hover:text-white transition-colors duration-300 group inline-block">
+                                خدماتنا وتخصصاتنا
+                                <span
+                                    class="absolute bottom-0 right-0 w-0 h-[1.5px] bg-brand-blue dark:bg-[#00C2FF] transition-all duration-300 group-hover:w-full"></span>
+                            </a>
+                            <a href="#success-cases"
+                                class="relative py-1 text-slate-500 hover:text-brand-blue dark:text-slate-400 dark:hover:text-white transition-colors duration-300 group inline-block">
+                                قصص النجاح للطفل
+                                <span
+                                    class="absolute bottom-0 right-0 w-0 h-[1.5px] bg-brand-blue dark:bg-[#00C2FF] transition-all duration-300 group-hover:w-full"></span>
+                            </a>
+
+                            <!-- Row 3 -->
+                            <a href="#awareness"
+                                class="relative py-1 text-slate-500 hover:text-brand-blue dark:text-slate-400 dark:hover:text-white transition-colors duration-300 group inline-block">
+                                محتوى طبي وتوعوي للأسر
+                                <span
+                                    class="absolute bottom-0 right-0 w-0 h-[1.5px] bg-brand-blue dark:bg-[#00C2FF] transition-all duration-300 group-hover:w-full"></span>
+                            </a>
+                            <a href="#contact"
+                                class="relative py-1 text-slate-500 hover:text-brand-blue dark:text-slate-400 dark:hover:text-white transition-colors duration-300 group inline-block">
+                                احجز استشارة طفلك
+                                <span
+                                    class="absolute bottom-0 right-0 w-0 h-[1.5px] bg-brand-blue dark:bg-[#00C2FF] transition-all duration-300 group-hover:w-full"></span>
+                            </a>
+
+                        </div>
                     </div>
-                </div>
 
-                <!-- Navigation Links with Underline Glow -->
-                <div class="flex flex-wrap justify-center gap-x-8 gap-y-4 text-sm font-medium">
-                    <a href="#hero"
-                        class="relative py-1 text-slate-400 hover:text-white transition-colors duration-300 group">
-                        الرئيسية
-                        <span
-                            class="absolute bottom-0 right-0 w-0 h-[2px] bg-[#00C2FF] transition-all duration-300 group-hover:w-full shadow-[0_0_8px_#00c2ff]"></span>
-                    </a>
-                    <a href="#about"
-                        class="relative py-1 text-slate-400 hover:text-white transition-colors duration-300 group">
-                        من نحن
-                        <span
-                            class="absolute bottom-0 right-0 w-0 h-[2px] bg-[#00C2FF] transition-all duration-300 group-hover:w-full shadow-[0_0_8px_#00c2ff]"></span>
-                    </a>
-                    <a href="#services"
-                        class="relative py-1 text-slate-400 hover:text-white transition-colors duration-300 group">
-                        خدماتنا
-                        <span
-                            class="absolute bottom-0 right-0 w-0 h-[2px] bg-[#00C2FF] transition-all duration-300 group-hover:w-full shadow-[0_0_8px_#00c2ff]"></span>
-                    </a>
-                    <a href="#success-cases"
-                        class="relative py-1 text-slate-400 hover:text-white transition-colors duration-300 group">
-                        قصص النجاح
-                        <span
-                            class="absolute bottom-0 right-0 w-0 h-[2px] bg-[#00C2FF] transition-all duration-300 group-hover:w-full shadow-[0_0_8px_#00c2ff]"></span>
-                    </a>
-                    <a href="#awareness"
-                        class="relative py-1 text-slate-400 hover:text-white transition-colors duration-300 group">
-                        محتوى توعوي
-                        <span
-                            class="absolute bottom-0 right-0 w-0 h-[2px] bg-[#00C2FF] transition-all duration-300 group-hover:w-full shadow-[0_0_8px_#00c2ff]"></span>
-                    </a>
-                    <a href="#contact"
-                        class="relative py-1 text-slate-400 hover:text-white transition-colors duration-300 group">
-                        اتصل بنا
-                        <span
-                            class="absolute bottom-0 right-0 w-0 h-[2px] bg-[#00C2FF] transition-all duration-300 group-hover:w-full shadow-[0_0_8px_#00c2ff]"></span>
-                    </a>
-                </div>
+                    <!-- Contact Hub (5 Columns) -->
+                    <div class="md:col-span-5 space-y-3">
+                        <h4
+                            class="text-sm font-bold text-brand-darkNavy dark:text-white border-r-2 border-brand-blue pr-2.5">
+                            مركز الاتصال والاستفسار</h4>
+                        <div class="glass-social-container justify-end mt-2">
 
-                <!-- Futuristic Glowing Divider 2 -->
-                <div class="h-[1px] w-full bg-gradient-to-r from-transparent via-cyan-500/30 to-transparent relative">
-                    <div
-                        class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-2 h-2 rounded-full bg-[#00C2FF] shadow-[0_0_10px_#00C2FF] animate-pulse">
+                            <!-- WhatsApp -->
+                            <a href="https://wa.me/201095100240" target="_blank" rel="noopener noreferrer"
+                                aria-label="WhatsApp" class="glass-social-btn wa-btn">
+                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.513 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.457L0 24zm6.59-4.846c1.6.95 3.588 1.455 5.616 1.456h.006c5.54 0 10.05-4.512 10.054-10.058.002-2.686-1.043-5.212-2.94-7.11C17.486 1.545 14.96 1.5 12.008 1.5c-5.547 0-10.06 4.513-10.064 10.062-.001 2.032.533 4.021 1.547 5.761l-.169-.297-1.02 3.73 3.825-.992.3.178zm10.93-4.983c-.276-.138-1.636-.807-1.89-.9-.253-.093-.437-.14-.62.138-.184.277-.712.9-.872 1.084-.16.185-.32.208-.597.069-.276-.138-1.168-.43-2.223-1.374-.82-.73-1.374-1.633-1.535-1.91-.16-.277-.017-.427.121-.564.125-.124.276-.323.415-.485.138-.161.184-.277.276-.462.093-.185.047-.347-.024-.485-.07-.138-.62-1.492-.85-2.046-.224-.54-.469-.462-.62-.462-.16 0-.34-.023-.52-.023-.18 0-.477.067-.728.34-.25.27-.954.933-.954 2.277 0 1.343.977 2.64 1.115 2.825.138.185 1.92 2.93 4.654 4.11.649.28 1.157.447 1.547.572.656.21 1.25.18 1.72.11.524-.078 1.636-.67 1.868-1.316.23-.647.23-1.2.16-1.316-.07-.116-.254-.185-.53-.323z" />
+                                </svg>
+                            </a>
+
+                            <!-- LinkedIn -->
+                            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer"
+                                aria-label="LinkedIn" class="glass-social-btn li-btn">
+                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M19 19h-3v-4.75c0-1.13-.03-2.58-1.57-2.58-1.57 0-1.81 1.23-1.81 2.5V19h-3V9h2.88v1.37h.04c.4-.76 1.38-1.56 2.84-1.56 3.04 0 3.6 2 3.6 4.6V19zM5.34 7.63c-.97 0-1.75-.79-1.75-1.76s.78-1.76 1.75-1.76 1.75.79 1.75 1.76-.78 1.76-1.75 1.76zM6.84 19H3.84V9h3v10z" />
+                                </svg>
+                            </a>
+
+                            <!-- Gmail -->
+                            <a href="mailto:abowaheed975@gmail.com" aria-label="Gmail" class="glass-social-btn gm-btn">
+                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+                                </svg>
+                            </a>
+
+                            <!-- Facebook -->
+                            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer"
+                                aria-label="Facebook" class="glass-social-btn fb-btn">
+                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z" />
+                                </svg>
+                            </a>
+
+                        </div>
                     </div>
+
                 </div>
 
-                <!-- Socials Section (Glass Circular Containers) -->
-                <div class="flex justify-center gap-6 text-slate-400">
-                    <!-- Facebook -->
-                    <a href="https://facebook.com" target="_blank" rel="noopener noreferrer"
-                        class="w-12 h-12 rounded-full flex items-center justify-center text-slate-300 border border-white/[0.08] bg-white/[0.03] backdrop-blur-md hover:border-[#00C2FF]/40 hover:bg-[#00C2FF]/10 hover:text-[#00C2FF] hover:shadow-[0_0_15px_rgba(0,194,255,0.3)] transition-all duration-300 hover:-translate-y-1 relative group"
-                        aria-label="Facebook">
-                        <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z" />
-                        </svg>
-                    </a>
 
-                    <!-- WhatsApp -->
-                    <a href="https://wa.me/201095100240" target="_blank" rel="noopener noreferrer"
-                        class="w-12 h-12 rounded-full flex items-center justify-center text-slate-300 border border-white/[0.08] bg-white/[0.03] backdrop-blur-md hover:border-emerald-500/40 hover:bg-emerald-500/10 hover:text-emerald-400 hover:shadow-[0_0_15px_rgba(16,185,129,0.3)] transition-all duration-300 hover:-translate-y-1 relative group"
-                        aria-label="WhatsApp">
-                        <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.513 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.457L0 24zm6.59-4.846c1.6.95 3.588 1.455 5.616 1.456h.006c5.54 0 10.05-4.512 10.054-10.058.002-2.686-1.043-5.212-2.94-7.11C17.486 1.545 14.96 1.5 12.008 1.5c-5.547 0-10.06 4.513-10.064 10.062-.001 2.032.533 4.021 1.547 5.761l-.169-.297-1.02 3.73 3.825-.992.3.178zm10.93-4.983c-.276-.138-1.636-.807-1.89-.9-.253-.093-.437-.14-.62.138-.184.277-.712.9-.872 1.084-.16.185-.32.208-.597.069-.276-.138-1.168-.43-2.223-1.374-.82-.73-1.374-1.633-1.535-1.91-.16-.277-.017-.427.121-.564.125-.124.276-.323.415-.485.138-.161.184-.277.276-.462.093-.185.047-.347-.024-.485-.07-.138-.62-1.492-.85-2.046-.224-.54-.469-.462-.62-.462-.16 0-.34-.023-.52-.023-.18 0-.477.067-.728.34-.25.27-.954.933-.954 2.277 0 1.343.977 2.64 1.115 2.825.138.185 1.92 2.93 4.654 4.11.649.28 1.157.447 1.547.572.656.21 1.25.18 1.72.11.524-.078 1.636-.67 1.868-1.316.23-.647.23-1.2.16-1.316-.07-.116-.254-.185-.53-.323z" />
-                        </svg>
-                    </a>
-
-                    <!-- LinkedIn -->
-                    <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer"
-                        class="w-12 h-12 rounded-full flex items-center justify-center text-slate-300 border border-white/[0.08] bg-white/[0.03] backdrop-blur-md hover:border-[#00C2FF]/40 hover:bg-[#00C2FF]/10 hover:text-[#00C2FF] hover:shadow-[0_0_15px_rgba(0,194,255,0.3)] transition-all duration-300 hover:-translate-y-1 relative group"
-                        aria-label="LinkedIn">
-                        <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M19 19h-3v-4.75c0-1.13-.03-2.58-1.57-2.58-1.57 0-1.81 1.23-1.81 2.5V19h-3V9h2.88v1.37h.04c.4.76 1.38-1.56 2.84-1.56 3.04 0 3.6 2 3.6 4.6V19zM5.34 7.63c-.97 0-1.75-.79-1.75-1.76s.78-1.76 1.75-1.76 1.75.79 1.75 1.76-.78 1.76-1.75 1.76zM6.84 19H3.84V9h3v10z" />
-                        </svg>
-                    </a>
-    
             </div>
 
             <!-- Footer Bottom Section -->
             <div
-                class="mt-12 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 border-t border-white/[0.05] pt-8">
+                class="mt-4 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-400 dark:text-slate-500 border-t border-slate-200/60 dark:border-white/[0.05] pt-4">
                 <span class="flex items-center gap-1 select-none">
                     &copy; <span class="font-outfit">2026</span> أ. محمد وحيد. جميع الحقوق محفوظة.
                 </span>
@@ -1871,6 +1993,7 @@
                     تصميم وتطوير راقٍ بكل حب.
                 </span>
             </div>
+
         </div>
     </footer>
 
@@ -2069,17 +2192,129 @@
         function requestService(serviceValue) {
             const select = document.getElementById('service');
             if (select) {
-                select.value = serviceValue;
-                // Trigger a subtle highlight on the select to draw attention
-                select.classList.add('ring-2', 'ring-brand-blue', 'ring-offset-1');
-                setTimeout(() => select.classList.remove('ring-2', 'ring-brand-blue', 'ring-offset-1'), 2000);
+                // Sync the custom dropdown UI state
+                if (window.syncCustomSelect) {
+                    window.syncCustomSelect(serviceValue);
+                } else {
+                    select.value = serviceValue;
+                }
+
+                // Trigger a subtle highlight on the custom trigger button
+                const trigger = document.getElementById('custom-select-trigger');
+                if (trigger) {
+                    trigger.classList.add('ring-2', 'ring-brand-blue', 'ring-offset-1', 'dark:ring-offset-brand-deepNavy');
+                    setTimeout(() => trigger.classList.remove('ring-2', 'ring-brand-blue', 'ring-offset-1', 'dark:ring-offset-brand-deepNavy'), 2000);
+                }
             }
             const contactSection = document.getElementById('contact');
             if (contactSection) {
                 contactSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
             }
         }
-        // Removed Auto-Flip on Scroll Observer to allow manual flip interaction
+
+        // ── Custom Dropdown Select Logic ──
+        const selectWrapper = document.getElementById('custom-select-wrapper');
+        const selectTrigger = document.getElementById('custom-select-trigger');
+        const selectLabel = document.getElementById('custom-select-label');
+        const selectMenu = document.getElementById('custom-select-menu');
+        const selectChevron = document.getElementById('custom-select-chevron');
+        const nativeSelect = document.getElementById('service');
+        const customOptions = document.querySelectorAll('.custom-option');
+
+        function toggleCustomSelect() {
+            const isOpen = !selectMenu.classList.contains('hidden');
+            if (isOpen) {
+                closeCustomSelect();
+            } else {
+                openCustomSelect();
+            }
+        }
+
+        function openCustomSelect() {
+            selectMenu.classList.remove('hidden');
+            // Small timeout to allow browser layout before transition styles trigger
+            requestAnimationFrame(() => {
+                selectMenu.classList.remove('opacity-0', 'scale-95');
+                selectMenu.classList.add('opacity-100', 'scale-100');
+                selectChevron.classList.add('rotate-180');
+            });
+        }
+
+        function closeCustomSelect() {
+            selectMenu.classList.remove('opacity-100', 'scale-100');
+            selectMenu.classList.add('opacity-0', 'scale-95');
+            selectChevron.classList.remove('rotate-180');
+
+            // Wait for transition animation to complete
+            const handleTransitionEnd = (e) => {
+                if (e.propertyName === 'opacity') {
+                    selectMenu.classList.add('hidden');
+                    selectMenu.removeEventListener('transitionend', handleTransitionEnd);
+                }
+            };
+            selectMenu.addEventListener('transitionend', handleTransitionEnd);
+        }
+
+        selectTrigger.addEventListener('click', toggleCustomSelect);
+
+        // Close on clicking outside
+        document.addEventListener('click', (e) => {
+            if (!selectWrapper.contains(e.target)) {
+                closeCustomSelect();
+            }
+        });
+
+        // Set value from selected custom option
+        function setSelectValue(value) {
+            nativeSelect.value = value;
+
+            // Trigger native change event
+            nativeSelect.dispatchEvent(new Event('change'));
+
+            // Sync visual states
+            customOptions.forEach(opt => {
+                const checkIcon = opt.querySelector('[data-lucide="check"]');
+                if (opt.getAttribute('data-value') === value) {
+                    opt.classList.add('bg-slate-50', 'dark:bg-white/[0.04]', 'font-bold', 'text-brand-blue', 'dark:text-brand-lightBlue');
+                    if (checkIcon) checkIcon.classList.remove('opacity-0');
+
+                    // Update trigger text and active font color
+                    selectLabel.textContent = opt.querySelector('span').textContent;
+                    selectLabel.classList.remove('text-slate-400', 'dark:text-slate-400');
+                    selectLabel.classList.add('text-slate-800', 'dark:text-slate-100');
+                } else {
+                    opt.classList.remove('bg-slate-50', 'dark:bg-white/[0.04]', 'font-bold', 'text-brand-blue', 'dark:text-brand-lightBlue');
+                    if (checkIcon) checkIcon.classList.add('opacity-0');
+                }
+            });
+        }
+
+        customOptions.forEach(opt => {
+            opt.addEventListener('click', () => {
+                setSelectValue(opt.getAttribute('data-value'));
+                closeCustomSelect();
+            });
+        });
+
+        // Handle Form Reset
+        form.addEventListener('reset', () => {
+            // Restore placeholder styling
+            selectLabel.textContent = 'اختر الخدمة...';
+            selectLabel.classList.remove('text-slate-800', 'dark:text-slate-100');
+            selectLabel.classList.add('text-slate-400', 'dark:text-slate-400');
+            customOptions.forEach(opt => {
+                opt.classList.remove('bg-slate-50', 'dark:bg-white/[0.04]', 'font-bold', 'text-brand-blue', 'dark:text-brand-lightBlue');
+                const checkIcon = opt.querySelector('[data-lucide="check"]');
+                if (checkIcon) checkIcon.classList.add('opacity-0');
+            });
+        });
+
+        // Sync helper for external calls (like requestService)
+        window.syncCustomSelect = function (value) {
+            setSelectValue(value);
+        };
+
+
     </script>
 </body>
 
